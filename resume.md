@@ -1,3 +1,8 @@
+---
+layout: single
+title: "Resume"
+permalink: /resume/
+---
 # Vinitha Pukazh Bagya R
 
 📞 +91 7339 586 277  
