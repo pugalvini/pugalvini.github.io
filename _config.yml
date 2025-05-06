@@ -3,7 +3,7 @@ description: "Senior Full Stack Developer | Portfolio"
 baseurl: "" # leave as is if deploying at root
 url: ""     # add your full domain when ready
 
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "dark"
 
 # Disable default theme UI elements
@@ -27,3 +27,7 @@ defaults:
       comments: false
       share: false
       related: false
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
