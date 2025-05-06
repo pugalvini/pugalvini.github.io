@@ -1,49 +1,29 @@
 title: "Vinitha Pukazh Bagya R"
-email: "pukazhvinitha@gmail.com"
-description: >- 
-  Full-stack developer with 6+ years of experience in Python, GCP, and scalable web applications.
-baseurl: "" # leave blank for user.github.io
-url: "https://yourusername.github.io" # replace with your GitHub Pages URL
-github_username: yourusername
+description: "Senior Full Stack Developer | Portfolio"
+baseurl: "" # leave as is if deploying at root
+url: ""     # add your full domain when ready
 
-# Theme
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
 
-# Site Author
-author:
-  name: "Vinitha Pukazh Bagya R"
-  avatar: "/assets/images/bio-photo.jpg" # upload your profile image here
-  bio: "Senior Application Developer | GCP | Python | React"
-  location: "India"
-  links:
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:pukazhvinitha@gmail.com"
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/pukazhvinitha/"
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/yourusername"
+# Disable default theme UI elements
+header:
+  show_header: false
+footer:
+  links: []
 
-# Navigation Links
-header_pages:
-  - index.md
-  - resume.md
-  - blog.md
-
-# Build Settings
-markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
-# Plugins (required by GitHub Pages)
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-remote-theme
-
-# Optional Enhancements
-paginate: 5
-paginate_path: "/blog/page:num/"
-timezone: Asia/Kolkata
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: false
+      header:
+        show_header: false
+      show_date: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
