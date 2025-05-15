@@ -9,9 +9,15 @@ title: "How to Create a Mute Rule in GCP Security Command Center"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to Create a Mute Rule in GCP Security Command Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </head>
   <body class="bg-gray-900 text-white font-sans">
     <main class="max-w-4xl mx-auto px-4 py-12">
+      <div class="absolute top-4 left-4">
+        <a href="/" class="text-gray-300 hover:text-white transition-colors">
+          <i class="fas fa-home text-2xl"></i>
+        </a>
+      </div>
       <header class="text-center mb-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
           How to Create a Mute Rule in GCP Security Command Center
