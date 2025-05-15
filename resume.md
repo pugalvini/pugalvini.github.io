@@ -9,8 +9,14 @@ permalink: /resume/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume | Vinitha Pukazh Bagya R</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </head>
   <body class="bg-gray-900 text-white font-sans">
+    <div class="absolute top-4 left-4">
+      <a href="/" class="text-gray-300 hover:text-white transition-colors">
+        <i class="fas fa-home text-2xl"></i>
+      </a>
+    </div>
     <main class="max-w-4xl mx-auto px-4 py-12">
       <header class="text-center mb-12">
         <h1 class="text-4xl font-bold mb-4">Vinitha Pukazh Bagya R</h1>
