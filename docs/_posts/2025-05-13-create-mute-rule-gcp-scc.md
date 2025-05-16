@@ -13,15 +13,15 @@ title: "How to Create a Mute Rule in GCP Security Command Center"
   </head>
   <body class="bg-gray-900 text-white font-sans">
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <div class="absolute top-4 left-4">
-        <a href="/" class="text-gray-300 hover:text-white transition-colors">
-          <i class="fas fa-home text-2xl"></i>
-        </a>
-      </div>
       <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-          How to Create a Mute Rule in GCP Security Command Center
-        </h1>
+        <div class="flex items-center justify-center gap-4 mb-4">
+          <a href="javascript:history.back()" class="text-gray-300 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-2xl"></i>
+          </a>
+          <h1 class="text-4xl md:text-5xl font-bold m-0">
+            How to Create a Mute Rule in GCP Security Command Center
+          </h1>
+        </div>
         <p class="text-lg md:text-xl text-gray-300">
           A guide to reducing alert fatigue in cloud security
         </p>
