@@ -12,22 +12,23 @@ permalink: /resume/
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </head>
   <body class="bg-gray-900 text-white font-sans">
-    <div class="absolute top-4 left-4">
-      <a href="/" class="text-gray-300 hover:text-white transition-colors">
-        <i class="fas fa-home text-2xl"></i>
-      </a>
-    </div>
     <main class="max-w-4xl mx-auto px-4 py-12">
-      <header class="text-center mb-12">
-        <h1 class="text-4xl font-bold mb-4">Vinitha Pukazh Bagya R</h1>
-        <p class="text-gray-300">
-          📞 +91 7339 586 277 | 📧 pukazhvinitha@gmail.com | 🔗
-          <a
-            href="https://www.linkedin.com/in/pukazhvinitha/"
-            class="text-blue-400 hover:underline"
-            >LinkedIn</a
-          >
-        </p>
+      <header class="flex items-center justify-center mb-12 relative">
+        <div class="absolute left-0">
+          <a href="javascript:history.back()" class="text-gray-300 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-2xl"></i>
+          </a>
+        </div>
+        <div class="flex-1 text-center">
+          <h1 class="text-4xl font-bold mb-4">Vinitha Pukazh Bagya R</h1>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-1"></i> +91 7339 586 277 |
+            <i class="fas fa-envelope mr-1"></i> pukazhvinitha@gmail.com |
+            <a href="https://www.linkedin.com/in/pukazhvinitha/" class="text-blue-400 hover:underline">
+              <i class="fab fa-linkedin mr-1"></i>LinkedIn
+            </a>
+          </p>
+        </div>
       </header>
 
       <section class="mb-12">
