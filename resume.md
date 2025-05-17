@@ -23,7 +23,7 @@ permalink: /resume/
           <div class="flex-1 text-center">
             <!-- Profile Picture -->
             <div class="flex justify-center mb-4">
-              <img src="/docs/assets/images/IMG_1724.HEIC" alt="Vinitha Pukazh Bagya R" class="w-24 h-24 rounded-full object-cover">
+              <img src="/docs/assets/images/profile_image.HEIC" alt="Vinitha Pukazh Bagya R" class="w-24 h-24 rounded-full object-cover">
             </div>
             <h1 class="text-4xl font-bold mb-2 text-white">Vinitha Pukazh Bagya R</h1>
             <p class="text-gray-300 mb-2">
