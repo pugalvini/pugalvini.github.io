@@ -15,7 +15,7 @@ title: "How to Create a Mute Rule in GCP Security Command Center"
     <main class="max-w-4xl mx-auto px-4 py-12">
       <header class="text-center mb-16">
         <div class="flex items-center justify-center gap-4 mb-4">
-          <a href="javascript:history.back()" class="text-gray-300 hover:text-white transition-colors">
+          <a href="/" class="text-gray-300 hover:text-white transition-colors">
             <i class="fas fa-arrow-left text-2xl"></i>
           </a>
           <h1 class="text-4xl md:text-5xl font-bold m-0">
