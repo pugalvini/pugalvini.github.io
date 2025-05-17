@@ -16,7 +16,7 @@ permalink: /resume/
       <div class="bg-gray-800 bg-opacity-90 shadow-2xl rounded-2xl p-10">
         <header class="flex items-center justify-center mb-12 relative">
           <div class="absolute left-0">
-            <a href="javascript:history.back()" class="text-gray-300 hover:text-white transition-colors">
+            <a href="/" class="text-gray-300 hover:text-white transition-colors">
               <i class="fas fa-arrow-left text-2xl"></i>
             </a>
           </div>
