@@ -17,14 +17,14 @@ title: "Vinitha | Portfolio"
     <main class="max-w-4xl mx-auto px-4 py-12">
       <header class="text-center mb-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
-          Hi, I’m Vinitha Pukazh Bagya
+          Hi, I'm Vinitha Pukazh Bagya
         </h1>
         <p class="text-lg md:text-xl text-gray-300">
           A developer who builds with curiosity and scale in mind.
         </p>
         <div class="mt-6 space-x-4">
           <a
-            href="/resume/"
+            href="{{ '/resume/' | relative_url }}"
             class="inline-block px-6 py-2 border border-gray-500 rounded-lg hover:bg-gray-800 transition"
             >View Resume</a
           >
@@ -74,7 +74,7 @@ title: "Vinitha | Portfolio"
             <span class="font-semibold">Interests:</span> Open-source contributions, exploring new technologies
           </p>
           <a
-            href="/resume/"
+            href="{{ '/resume/' | relative_url }}"
             class="inline-block mt-6 px-6 py-2 border border-gray-500 rounded-lg hover:bg-gray-800 transition"
           >
             View Full Resume</a
