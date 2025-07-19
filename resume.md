@@ -21,7 +21,6 @@ permalink: /resume/
             </a>
           </div>
           <div class="flex-1 text-center">
-            <!-- Profile Picture -->
             <div class="flex justify-center mb-4">
               <img src="/docs/assets/images/profile_image.HEIC" alt="Vinitha Pukazh Bagya R" class="w-24 h-24 rounded-full object-cover">
             </div>
@@ -80,6 +79,7 @@ permalink: /resume/
                   <li><strong>Compensation Uploader:</strong> Architected microservices using Python, GCP, and Terraform, achieving 40% throughput improvement and 99.9% uptime. Led security enhancements reducing vulnerabilities by 80%.</li>
                   <li><strong>Data Platform:</strong> Automated data verification processing 10k+ records, reducing manual effort by 75%. Implemented data validation and migration strategies saving $1000 annually in maintenance costs.</li>
                   <li><strong>DevOps & Security:</strong> Spearheaded Infrastructure as Code adoption using Terraform, reducing deployment time by 60%. Enhanced security posture from level 0 to level 1 within six months through threat modeling and best practices.</li>
+                  <li><strong>Team Leadership & Mentoring:</strong> Mentored 3+ junior developers and interns, providing technical guidance and career development support. Conducted code reviews, pair programming sessions, and knowledge sharing workshops. Successfully guided a second-year college intern through a fast-paced product cycle, helping them transition from academic to practical development skills.</li>
                 </ul>
               </div>
             </div>
