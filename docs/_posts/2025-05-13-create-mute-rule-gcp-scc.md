@@ -1,6 +1,10 @@
 ---
 layout: none
 title: "How to Create a Mute Rule in GCP Security Command Center"
+date: 2025-05-13
+category: "Cloud Security"
+tags: ["GCP", "Security", "Cloud Infrastructure", "DevSecOps"]
+excerpt: "A comprehensive guide to reducing alert fatigue in cloud security by creating mute rules in Google Cloud's Security Command Center. Includes step-by-step instructions and best practices for managing security alerts at scale."
 ---
 
 <html lang="en">
