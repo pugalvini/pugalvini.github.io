@@ -69,9 +69,3 @@ npm run preview
 ## 📄 License
 
 © 2026 Vinitha Pukazh Bagya R. All rights reserved.
-
-## 🤝 Contact
-
-- Email: pukazhvinitha@gmail.com
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
