@@ -48,41 +48,41 @@ const ExperienceTimeline = () => {
 
     return (
         <section className="section-container">
-            <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
+            <div className="text-center mb-8 md:mb-16">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-slate-900 mb-3 md:mb-4 px-4">
                     Professional Journey
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-base md:text-lg text-slate-600 px-4">
                     7+ years of delivering impactful solutions across diverse domains
                 </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto px-4">
                 <div className="relative">
                     {/* Timeline Line */}
-                    <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200"></div>
+                    <div className="absolute left-2 md:left-8 top-0 bottom-0 w-0.5 bg-slate-200"></div>
 
                     {/* Experience Items */}
-                    <div className="space-y-12">
+                    <div className="space-y-8 md:space-y-12">
                         {experiences.map((exp, index) => (
-                            <div key={index} className="relative pl-20">
+                            <div key={index} className="relative pl-8 md:pl-20">
                                 {/* Timeline Dot */}
-                                <div className="absolute left-6 top-2">
+                                <div className="absolute left-0 md:left-6 top-2">
                                     <div className={`timeline-dot ${exp.current ? 'bg-green-500' : 'bg-accent'}`}></div>
                                 </div>
 
                                 {/* Content Card */}
-                                <div className="bg-white border border-slate-200 rounded-xl p-6 card-lift">
-                                    <div className="flex flex-wrap items-start justify-between mb-3">
-                                        <div>
-                                            <h3 className="text-2xl font-serif font-semibold text-slate-900">
+                                <div className="bg-white border border-slate-200 rounded-xl p-4 md:p-6 card-lift">
+                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3 gap-2 md:gap-0">
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-serif font-semibold text-slate-900">
                                                 {exp.company}
                                             </h3>
-                                            <p className="text-lg text-accent font-medium">{exp.role}</p>
+                                            <p className="text-base md:text-lg text-accent font-medium">{exp.role}</p>
                                         </div>
-                                        <div className="text-right">
-                                            <p className="text-slate-600 font-medium">{exp.period}</p>
-                                            <p className="text-sm text-slate-500">{exp.location}</p>
+                                        <div className="md:text-right">
+                                            <p className="text-sm md:text-base text-slate-600 font-medium">{exp.period}</p>
+                                            <p className="text-xs md:text-sm text-slate-500">{exp.location}</p>
                                             {exp.current && (
                                                 <span className="inline-block mt-1 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
                                                     Current
@@ -93,8 +93,8 @@ const ExperienceTimeline = () => {
 
                                     <ul className="space-y-2 mt-4">
                                         {exp.achievements.map((achievement, achIndex) => (
-                                            <li key={achIndex} className="flex items-start gap-2 text-slate-600">
-                                                <span className="text-accent mt-1">•</span>
+                                            <li key={achIndex} className="flex items-start gap-2 text-sm md:text-base text-slate-600">
+                                                <span className="text-accent mt-1 flex-shrink-0">•</span>
                                                 <span>{achievement}</span>
                                             </li>
                                         ))}
