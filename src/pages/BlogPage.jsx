@@ -11,7 +11,7 @@ const BlogPage = () => {
             title: 'Mastering Rate Limiting: 5 Algorithms You Need to Know',
             excerpt: 'A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.',
             readTime: '8 min read',
-            date: 'July 20, 2026',
+            date: 'September 6, 2025',
             theme: { color: 'from-blue-100 via-indigo-100 to-purple-100', emoji: '🚦' },
             tags: ['System Design', 'Backend', 'Architecture'],
             route: '/blog/rate-limiting-algorithms'

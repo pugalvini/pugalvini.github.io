@@ -347,7 +347,7 @@ const BlogPostRateLimit = () => {
                         A conceptual guide to protecting your systems from being overwhelmed.
                     </p>
                     <div className="flex items-center gap-4 text-sm text-slate-500">
-                        <span>July 20, 2026</span>
+                        <span>September 6, 2025</span>
                         <span>•</span>
                         <span>8 min read</span>
                     </div>
