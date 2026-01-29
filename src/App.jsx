@@ -15,6 +15,7 @@ import BlogPostRateLimit from './pages/BlogPostRateLimit';
 import BlogPostSigstore from './pages/BlogPostSigstore';
 import BlogPostCursor from './pages/BlogPostCursor';
 import BlogPostMSKIAM from './pages/BlogPostMSKIAM';
+import BlogPostScalingZeroToMillions from './pages/BlogPostScalingZeroToMillions';
 import NotFoundPage from './pages/NotFoundPage';
 import SEO from './components/SEO';
 import './index.css';
@@ -46,6 +47,7 @@ function App() {
           <Route path="/blog/sigstore-software-supply-chain" element={<BlogPostSigstore />} />
           <Route path="/blog/cursor-tdd-refactoring" element={<BlogPostCursor />} />
           <Route path="/blog/aws-msk-iam-auth" element={<BlogPostMSKIAM />} />
+          <Route path="/blog/scaling-zero-to-millions" element={<BlogPostScalingZeroToMillions />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 

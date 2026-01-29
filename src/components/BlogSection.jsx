@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 const BlogSection = () => {
     const blogPosts = [
         {
+            title: 'Scaling from Zero to Millions of Users',
+            excerpt: 'A visual journey of how modern systems evolve to handle massive scale. Learn about single servers, load balancing, caching, and sharding.',
+            readTime: '7 min read',
+            date: 'January 11, 2026',
+            theme: { color: 'from-pink-100 via-rose-100 to-red-100', emoji: '🚀' },
+            tags: ['System Design', 'Architecture', 'Scalability'],
+            route: '/blog/scaling-zero-to-millions'
+        },
+        {
             title: 'Migrating AWS MSK to IAM Authentication for EKS Pods',
             excerpt: 'Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.',
             readTime: '6 min read',
