@@ -92,87 +92,77 @@ const BlogPostSigstore = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white pt-20 pb-16">
-            <div className="max-w-3xl mx-auto px-6">
-                {/* ── Breadcrumb & Meta ── */}
-                <div className="mb-8">
-                    <div className="flex items-center gap-3 text-sm text-slate-500 mb-4">
-                        <span className="px-3 py-1 bg-amber-100 text-amber-700 font-semibold rounded-full">
-                            Security
-                        </span>
-                        <span>•</span>
-                        <span>6 min read</span>
-                        <span>•</span>
-                        <span>November 23, 2025</span>
+        <div className="min-h-screen bg-white pt-20">
+            <article className="section-container max-w-4xl mx-auto">
+                {/* Header */}
+                <header className="mb-12">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Security</span>
+                        <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">DevSecOps</span>
+                        <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Supply Chain</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
                         Securing the Software Supply Chain with Sigstore
                     </h1>
-                    <p className="text-xl text-slate-600 leading-relaxed">
+                    <p className="text-xl text-slate-600 mb-4">
                         Say goodbye to PGP key management and hello to keyless, transparent code signing.
                     </p>
-                </div>
-
-                {/* ── Author Info ── */}
-                <div className="flex items-center gap-4 py-6 border-y border-slate-100 mb-10">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-300 rounded-full flex items-center justify-center text-xl shadow-sm">
-                        👨‍💻
+                    <div className="flex items-center gap-4 text-sm text-slate-500">
+                        <span>November 23, 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
                     </div>
-                    <div>
-                        <div className="font-semibold text-slate-900">Vinitha Pukazhbagyar</div>
-                        <div className="text-sm text-slate-500">Software Engineer</div>
-                    </div>
-                </div>
+                </header>
 
-                {/* ── Article Content ── */}
-                <article className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-a:text-accent hover:prose-a:text-accent/80">
+                {/* Content */}
+                <div className="prose prose-lg max-w-none">
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         In recent years, the software industry has witnessed a dramatic increase in supply chain attacks. From SolarWinds to the Log4j vulnerability, it has become increasingly evident that simply securing our applications isn't enough—we must also secure the <strong>process</strong> by which they are built and distributed.
                     </p>
 
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         One of the fundamental pillars of software supply chain security is code signing: proving that a piece of software (a binary, a container image, or a library) was indeed produced by a trusted entity and hasn't been tampered with. However, traditionally, code signing has been notoriously painful.
                     </p>
 
-                    <h2>The Problem with Traditional Code Signing</h2>
+                    <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">The Problem with Traditional Code Signing</h2>
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-4">
                         For decades, PGP (Pretty Good Privacy) and long-lived cryptographic keys have been the standard for code signing. But managing these keys is a nightmare:
                     </p>
-                    <ul>
+                    <ul className="list-disc list-inside space-y-3 text-lg text-slate-700 mb-6">
                         <li><strong>Key Compromise:</strong> If a developer's laptop is compromised and their private key is stolen, attackers can sign malicious code in their name.</li>
                         <li><strong>Key Loss:</strong> If you lose your private key, you can no longer sign updates for your software.</li>
                         <li><strong>Key Revocation:</strong> Revoking a compromised key and distributing the new public key to all consumers is a chaotic and unreliable process.</li>
                     </ul>
 
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         We needed a better way. Enter <strong>Sigstore</strong>.
                     </p>
 
-                    <h2>What is Sigstore?</h2>
+                    <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">What is Sigstore?</h2>
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-4">
                         <a href="https://sigstore.dev" target="_blank" rel="noopener noreferrer">Sigstore</a> is an open-source project managed by the Linux Foundation that aims to make secure software signing easy and accessible to everyone. Instead of relying on long-lived keys, Sigstore introduces a <strong>keyless signing</strong> approach.
                     </p>
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         It achieves this by combining OpenID Connect (OIDC) for identity, short-lived certificates, and an immutable transparency log.
                     </p>
 
                     <SigstoreWorkflowDiagram />
 
-                    <h2>The Three Pillars of Sigstore</h2>
+                    <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">The Three Pillars of Sigstore</h2>
 
-                    <p>Sigstore is composed of three primary components that work in harmony:</p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">Sigstore is composed of three primary components that work in harmony:</p>
 
-                    <h3>1. Cosign (The CLI)</h3>
-                    <p>
+                    <h3 className="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">1. Cosign (The CLI)</h3>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         Cosign is the tool developers use to sign and verify artifacts, particularly container images. When you run a signing command with Cosign, it handles the complex orchestration of generating ephemeral keys, communicating with OIDC providers, and interacting with the other Sigstore services.
                     </p>
 
-                    <h3>2. Fulcio (The Certificate Authority)</h3>
-                    <p>
+                    <h3 className="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">2. Fulcio (The Certificate Authority)</h3>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-4">
                         Fulcio is a free Root Certificate Authority built specifically for code signing. When a developer authenticates using an OIDC provider (like Google, GitHub, or Microsoft), Fulcio issues a short-lived certificate bound to their identity. This certificate is valid only for a few minutes—just long enough to sign the software artifact. 
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg my-6">
@@ -181,16 +171,16 @@ const BlogPostSigstore = () => {
                         </p>
                     </div>
 
-                    <h3>3. Rekor (The Transparency Log)</h3>
-                    <p>
+                    <h3 className="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">3. Rekor (The Transparency Log)</h3>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         Rekor is an immutable, tamper-resistant ledger that records all signing events. Because Fulcio certificates expire so quickly, consumers need a way to prove that the signature was valid <em>at the exact moment</em> the software was signed. Rekor provides this proof by acting as a public notary.
                     </p>
 
-                    <h2>The Sigstore Workflow in Action</h2>
+                    <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">The Sigstore Workflow in Action</h2>
 
-                    <p>Let's walk through how a developer signs a container image and how a consumer verifies it:</p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-4">Let's walk through how a developer signs a container image and how a consumer verifies it:</p>
 
-                    <ol>
+                    <ol className="list-decimal list-inside space-y-3 text-lg text-slate-700 mb-6">
                         <li><strong>Generate:</strong> The developer's machine generates a temporary public/private key pair.</li>
                         <li><strong>Authenticate:</strong> The developer logs in via OIDC (e.g., their GitHub account).</li>
                         <li><strong>Certify:</strong> The OIDC token and public key are sent to Fulcio, which returns a short-lived certificate binding the key to the developer's identity.</li>
@@ -199,36 +189,18 @@ const BlogPostSigstore = () => {
                         <li><strong>Verify:</strong> When a consumer downloads the image, Cosign checks Rekor to verify the signature was logged before the certificate expired.</li>
                     </ol>
 
-                    <h2>Why This Matters</h2>
+                    <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">Why This Matters</h2>
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         By moving away from manual key management and leveraging identities we already use (OIDC), Sigstore drastically lowers the barrier to entry for securing the software supply chain. It brings the same ease of use to code signing that Let's Encrypt brought to HTTPS.
                     </p>
                     
-                    <p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         Major ecosystems like Kubernetes, Python (PyPI), and npm are already adopting Sigstore. If you're building software today, adopting keyless signing with Sigstore is one of the highest-impact security improvements you can make.
                     </p>
 
-                </article>
-
-                {/* ── Footer ── */}
-                <div className="mt-16 pt-8 border-t border-slate-200">
-                    <div className="bg-slate-50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div>
-                            <h3 className="font-semibold text-slate-900 mb-1">Found this helpful?</h3>
-                            <p className="text-sm text-slate-600">Consider sharing it with your network or team.</p>
-                        </div>
-                        <div className="flex gap-3">
-                            <button className="px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium hover:text-accent hover:border-accent transition-colors">
-                                Share on Twitter
-                            </button>
-                            <button className="px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium hover:text-accent hover:border-accent transition-colors">
-                                Share on LinkedIn
-                            </button>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </article>
         </div>
     );
 };
