@@ -8,6 +8,15 @@ const BlogPage = () => {
 
     const blogPosts = [
         {
+            title: 'Securing the Software Supply Chain with Sigstore',
+            excerpt: 'Say goodbye to PGP key management and hello to keyless, transparent code signing. Learn how Sigstore uses OIDC, Fulcio, and Rekor to secure your artifacts.',
+            readTime: '6 min read',
+            date: 'November 23, 2025',
+            theme: { color: 'from-amber-100 via-orange-100 to-yellow-100', emoji: '🔐' },
+            tags: ['Security', 'DevSecOps', 'Supply Chain'],
+            route: '/blog/sigstore-software-supply-chain'
+        },
+        {
             title: 'Mastering Rate Limiting: 5 Algorithms You Need to Know',
             excerpt: 'A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.',
             readTime: '8 min read',

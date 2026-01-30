@@ -1,0 +1,240 @@
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+/* ─────────────────────────────────────────────
+   Diagram: Sigstore Workflow
+───────────────────────────────────────────── */
+const SigstoreWorkflowDiagram = () => (
+    <div className="my-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+        <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">How Sigstore Works</p>
+        <svg viewBox="0 0 600 320" className="w-full max-w-3xl mx-auto block" aria-label="Sigstore Workflow Diagram">
+            {/* ── Background Zones ── */}
+            <rect x="20" y="20" width="180" height="280" rx="12" fill="#f8fafc" stroke="#e2e8f0" strokeDasharray="4"/>
+            <text x="110" y="40" textAnchor="middle" fontSize="11" fontWeight="600" fill="#64748b">1. Developer</text>
+
+            <rect x="220" y="20" width="180" height="280" rx="12" fill="#f0fdf4" stroke="#bbf7d0" strokeDasharray="4"/>
+            <text x="310" y="40" textAnchor="middle" fontSize="11" fontWeight="600" fill="#22c55e">2. Sigstore Infrastructure</text>
+
+            <rect x="420" y="20" width="160" height="280" rx="12" fill="#eff6ff" stroke="#bfdbfe" strokeDasharray="4"/>
+            <text x="500" y="40" textAnchor="middle" fontSize="11" fontWeight="600" fill="#3b82f6">3. Consumer</text>
+
+            {/* ── Steps & Components ── */}
+            {/* Developer Auth */}
+            <rect x="40" y="70" width="140" height="40" rx="8" fill="#fff" stroke="#94a3b8" strokeWidth="1.5"/>
+            <text x="110" y="90" textAnchor="middle" fontSize="10" fontWeight="600" fill="#334155">OIDC Login (GitHub/Google)</text>
+            <text x="110" y="102" textAnchor="middle" fontSize="8" fill="#64748b">Authenticate identity</text>
+
+            {/* Cosign / Key Gen */}
+            <rect x="40" y="140" width="140" height="40" rx="8" fill="#fff" stroke="#94a3b8" strokeWidth="1.5"/>
+            <text x="110" y="160" textAnchor="middle" fontSize="10" fontWeight="600" fill="#334155">Ephemeral Keys</text>
+            <text x="110" y="172" textAnchor="middle" fontSize="8" fill="#64748b">Generate short-lived keypair</text>
+
+            {/* Signing Artifact */}
+            <rect x="40" y="210" width="140" height="40" rx="8" fill="#fff" stroke="#94a3b8" strokeWidth="1.5"/>
+            <text x="110" y="230" textAnchor="middle" fontSize="10" fontWeight="600" fill="#334155">Sign Container/Code</text>
+            <text x="110" y="242" textAnchor="middle" fontSize="8" fill="#64748b">Using private key</text>
+
+            {/* Fulcio */}
+            <rect x="240" y="100" width="140" height="50" rx="8" fill="#fff" stroke="#22c55e" strokeWidth="1.5"/>
+            <text x="310" y="122" textAnchor="middle" fontSize="11" fontWeight="600" fill="#16a34a">Fulcio (CA)</text>
+            <text x="310" y="136" textAnchor="middle" fontSize="9" fill="#15803d">Issues certificate</text>
+
+            {/* Rekor */}
+            <rect x="240" y="180" width="140" height="50" rx="8" fill="#fff" stroke="#22c55e" strokeWidth="1.5"/>
+            <text x="310" y="202" textAnchor="middle" fontSize="11" fontWeight="600" fill="#16a34a">Rekor (Ledger)</text>
+            <text x="310" y="216" textAnchor="middle" fontSize="9" fill="#15803d">Transparency log</text>
+
+            {/* Verification */}
+            <rect x="440" y="140" width="120" height="50" rx="8" fill="#fff" stroke="#3b82f6" strokeWidth="1.5"/>
+            <text x="500" y="162" textAnchor="middle" fontSize="11" fontWeight="600" fill="#2563eb">Cosign Verify</text>
+            <text x="500" y="176" textAnchor="middle" fontSize="9" fill="#1d4ed8">Check signature & log</text>
+
+            {/* ── Arrows ── */}
+            <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+                </marker>
+                <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#22c55e"/>
+                </marker>
+                <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+                </marker>
+            </defs>
+
+            {/* Auth to Keys */}
+            <line x1="110" y1="110" x2="110" y2="132" stroke="#94a3b8" strokeWidth="1.5" markerEnd="url(#arrow)"/>
+            
+            {/* Keys to Fulcio */}
+            <line x1="180" y1="140" x2="232" y2="130" stroke="#94a3b8" strokeWidth="1.5" markerEnd="url(#arrow)"/>
+            <text x="210" y="125" textAnchor="middle" fontSize="8" fill="#64748b">OIDC + PubKey</text>
+
+            {/* Keys to Signing */}
+            <line x1="110" y1="180" x2="110" y2="202" stroke="#94a3b8" strokeWidth="1.5" markerEnd="url(#arrow)"/>
+
+            {/* Signing to Rekor */}
+            <line x1="180" y1="215" x2="232" y2="210" stroke="#94a3b8" strokeWidth="1.5" markerEnd="url(#arrow)"/>
+            <text x="210" y="200" textAnchor="middle" fontSize="8" fill="#64748b">Cert + Sig</text>
+
+            {/* Rekor to Verification */}
+            <line x1="380" y1="190" x2="432" y2="175" stroke="#22c55e" strokeWidth="1.5" markerEnd="url(#arrow-green)"/>
+            
+            {/* Fulcio to Rekor (optional flow but good for context) */}
+            <line x1="310" y1="150" x2="310" y2="172" stroke="#22c55e" strokeWidth="1.5" strokeDasharray="2" markerEnd="url(#arrow-green)"/>
+
+        </svg>
+        <p className="text-center text-xs text-slate-500 mt-3">Developer authenticates via OIDC, gets short-lived certs from Fulcio, signs the artifact, and logs it transparently in Rekor.</p>
+    </div>
+);
+
+const BlogPostSigstore = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-white pt-20 pb-16">
+            <div className="max-w-3xl mx-auto px-6">
+                {/* ── Breadcrumb & Meta ── */}
+                <div className="mb-8">
+                    <Link to="/blog" className="text-accent hover:underline text-sm font-medium inline-flex items-center gap-1 mb-6">
+                        ← Back to Blog
+                    </Link>
+                    <div className="flex items-center gap-3 text-sm text-slate-500 mb-4">
+                        <span className="px-3 py-1 bg-amber-100 text-amber-700 font-semibold rounded-full">
+                            Security
+                        </span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                        <span>•</span>
+                        <span>November 23, 2025</span>
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+                        Securing the Software Supply Chain with Sigstore
+                    </h1>
+                    <p className="text-xl text-slate-600 leading-relaxed">
+                        Say goodbye to PGP key management and hello to keyless, transparent code signing.
+                    </p>
+                </div>
+
+                {/* ── Author Info ── */}
+                <div className="flex items-center gap-4 py-6 border-y border-slate-100 mb-10">
+                    <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-300 rounded-full flex items-center justify-center text-xl shadow-sm">
+                        👨‍💻
+                    </div>
+                    <div>
+                        <div className="font-semibold text-slate-900">Vinitha Pukazhbagyar</div>
+                        <div className="text-sm text-slate-500">Software Engineer</div>
+                    </div>
+                </div>
+
+                {/* ── Article Content ── */}
+                <article className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-a:text-accent hover:prose-a:text-accent/80">
+                    
+                    <p>
+                        In recent years, the software industry has witnessed a dramatic increase in supply chain attacks. From SolarWinds to the Log4j vulnerability, it has become increasingly evident that simply securing our applications isn't enough—we must also secure the <strong>process</strong> by which they are built and distributed.
+                    </p>
+
+                    <p>
+                        One of the fundamental pillars of software supply chain security is code signing: proving that a piece of software (a binary, a container image, or a library) was indeed produced by a trusted entity and hasn't been tampered with. However, traditionally, code signing has been notoriously painful.
+                    </p>
+
+                    <h2>The Problem with Traditional Code Signing</h2>
+                    
+                    <p>
+                        For decades, PGP (Pretty Good Privacy) and long-lived cryptographic keys have been the standard for code signing. But managing these keys is a nightmare:
+                    </p>
+                    <ul>
+                        <li><strong>Key Compromise:</strong> If a developer's laptop is compromised and their private key is stolen, attackers can sign malicious code in their name.</li>
+                        <li><strong>Key Loss:</strong> If you lose your private key, you can no longer sign updates for your software.</li>
+                        <li><strong>Key Revocation:</strong> Revoking a compromised key and distributing the new public key to all consumers is a chaotic and unreliable process.</li>
+                    </ul>
+
+                    <p>
+                        We needed a better way. Enter <strong>Sigstore</strong>.
+                    </p>
+
+                    <h2>What is Sigstore?</h2>
+                    
+                    <p>
+                        <a href="https://sigstore.dev" target="_blank" rel="noopener noreferrer">Sigstore</a> is an open-source project managed by the Linux Foundation that aims to make secure software signing easy and accessible to everyone. Instead of relying on long-lived keys, Sigstore introduces a <strong>keyless signing</strong> approach.
+                    </p>
+                    
+                    <p>
+                        It achieves this by combining OpenID Connect (OIDC) for identity, short-lived certificates, and an immutable transparency log.
+                    </p>
+
+                    <SigstoreWorkflowDiagram />
+
+                    <h2>The Three Pillars of Sigstore</h2>
+
+                    <p>Sigstore is composed of three primary components that work in harmony:</p>
+
+                    <h3>1. Cosign (The CLI)</h3>
+                    <p>
+                        Cosign is the tool developers use to sign and verify artifacts, particularly container images. When you run a signing command with Cosign, it handles the complex orchestration of generating ephemeral keys, communicating with OIDC providers, and interacting with the other Sigstore services.
+                    </p>
+
+                    <h3>2. Fulcio (The Certificate Authority)</h3>
+                    <p>
+                        Fulcio is a free Root Certificate Authority built specifically for code signing. When a developer authenticates using an OIDC provider (like Google, GitHub, or Microsoft), Fulcio issues a short-lived certificate bound to their identity. This certificate is valid only for a few minutes—just long enough to sign the software artifact. 
+                    </p>
+                    <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg my-6">
+                        <p className="m-0 text-amber-800 text-sm font-medium">
+                            💡 <strong>Why short-lived?</strong> Because the certificate expires almost immediately, there is no need for complex key revocation processes. If an attacker gains access to the ephemeral private key, it will already be useless.
+                        </p>
+                    </div>
+
+                    <h3>3. Rekor (The Transparency Log)</h3>
+                    <p>
+                        Rekor is an immutable, tamper-resistant ledger that records all signing events. Because Fulcio certificates expire so quickly, consumers need a way to prove that the signature was valid <em>at the exact moment</em> the software was signed. Rekor provides this proof by acting as a public notary.
+                    </p>
+
+                    <h2>The Sigstore Workflow in Action</h2>
+
+                    <p>Let's walk through how a developer signs a container image and how a consumer verifies it:</p>
+
+                    <ol>
+                        <li><strong>Generate:</strong> The developer's machine generates a temporary public/private key pair.</li>
+                        <li><strong>Authenticate:</strong> The developer logs in via OIDC (e.g., their GitHub account).</li>
+                        <li><strong>Certify:</strong> The OIDC token and public key are sent to Fulcio, which returns a short-lived certificate binding the key to the developer's identity.</li>
+                        <li><strong>Sign:</strong> The developer signs the container image using the private key.</li>
+                        <li><strong>Record:</strong> The signature and the certificate are logged in Rekor. The private key is then securely discarded.</li>
+                        <li><strong>Verify:</strong> When a consumer downloads the image, Cosign checks Rekor to verify the signature was logged before the certificate expired.</li>
+                    </ol>
+
+                    <h2>Why This Matters</h2>
+                    
+                    <p>
+                        By moving away from manual key management and leveraging identities we already use (OIDC), Sigstore drastically lowers the barrier to entry for securing the software supply chain. It brings the same ease of use to code signing that Let's Encrypt brought to HTTPS.
+                    </p>
+                    
+                    <p>
+                        Major ecosystems like Kubernetes, Python (PyPI), and npm are already adopting Sigstore. If you're building software today, adopting keyless signing with Sigstore is one of the highest-impact security improvements you can make.
+                    </p>
+
+                </article>
+
+                {/* ── Footer ── */}
+                <div className="mt-16 pt-8 border-t border-slate-200">
+                    <div className="bg-slate-50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div>
+                            <h3 className="font-semibold text-slate-900 mb-1">Found this helpful?</h3>
+                            <p className="text-sm text-slate-600">Consider sharing it with your network or team.</p>
+                        </div>
+                        <div className="flex gap-3">
+                            <button className="px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium hover:text-accent hover:border-accent transition-colors">
+                                Share on Twitter
+                            </button>
+                            <button className="px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium hover:text-accent hover:border-accent transition-colors">
+                                Share on LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default BlogPostSigstore;
