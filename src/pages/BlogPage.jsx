@@ -8,6 +8,15 @@ const BlogPage = () => {
 
     const blogPosts = [
         {
+            title: 'Supercharging TDD and Refactoring with Cursor',
+            excerpt: 'How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.',
+            readTime: '7 min read',
+            date: 'December 14, 2025',
+            theme: { color: 'from-violet-100 via-purple-100 to-fuchsia-100', emoji: '🤖' },
+            tags: ['Productivity', 'AI Tools', 'TDD'],
+            route: '/blog/cursor-tdd-refactoring'
+        },
+        {
             title: 'Securing the Software Supply Chain with Sigstore',
             excerpt: 'Say goodbye to PGP key management and hello to keyless, transparent code signing. Learn how Sigstore uses OIDC, Fulcio, and Rekor to secure your artifacts.',
             readTime: '6 min read',
