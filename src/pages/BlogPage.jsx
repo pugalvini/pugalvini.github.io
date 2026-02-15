@@ -9,6 +9,16 @@ const BlogPage = () => {
 
     const blogPosts = [
         {
+            title: 'Distributed Systems Fundamentals: A Developer\'s Guide',
+            excerpt: 'Understand Scalability, Reliability, Latency, Throughput, Availability, and Consistency. A complete guide to System Design trade-offs.',
+            readTime: '12 min read',
+            date: 'February 15, 2026',
+            theme: { color: 'from-emerald-100 via-teal-100 to-cyan-100', emoji: '🌐' },
+            tags: ['System Design', 'Architecture', 'Fundamentals'],
+            route: '/blog/distributed-systems-fundamentals',
+            image: '/og-distributed-systems.jpg'
+        },
+        {
             title: 'Building Anish Aqua Minerals Website with Antigravity',
             excerpt: 'How I leveraged Antigravity AI to rapidly design, build, and deploy a responsive React web app for a new packaged drinking water business in Coimbatore.',
             readTime: '6 min read',
