@@ -5,6 +5,69 @@ import ReactionWidget from '../components/ReactionWidget';
 import ShareWidget from '../components/ShareWidget';
 import BlogComments from '../components/BlogComments';
 
+const DevelopmentFlowDiagram = () => (
+    <div className="my-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+        <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">Development &amp; Deployment Flow</p>
+        <svg viewBox="0 0 600 240" className="w-full max-w-2xl mx-auto block" aria-label="Development flow diagram">
+            {/* Developer */}
+            <circle cx="60" cy="100" r="25" fill="#e0f2fe" stroke="#38bdf8" strokeWidth="2"/>
+            <text x="60" y="98" textAnchor="middle" fontSize="10" fill="#0284c7" fontWeight="bold">Developer</text>
+            <text x="60" y="110" textAnchor="middle" fontSize="9" fill="#0369a1">+ AI</text>
+
+            {/* React */}
+            <rect x="160" y="70" width="100" height="60" rx="10" fill="#dcfce7" stroke="#4ade80" strokeWidth="2"/>
+            <text x="210" y="98" textAnchor="middle" fontSize="12" fontWeight="700" fill="#166534">React App</text>
+            <text x="210" y="112" textAnchor="middle" fontSize="9" fill="#15803d">(Vite)</text>
+
+            {/* UI / CSS Components */}
+            <rect x="170" y="15" width="80" height="30" rx="6" fill="#fef9c3" stroke="#facc15" strokeWidth="1"/>
+            <text x="210" y="34" textAnchor="middle" fontSize="10" fill="#854d0e">UI</text>
+
+            <rect x="170" y="155" width="80" height="30" rx="6" fill="#fef9c3" stroke="#facc15" strokeWidth="1"/>
+            <text x="210" y="174" textAnchor="middle" fontSize="10" fill="#854d0e">Vanilla CSS</text>
+
+            {/* GitHub */}
+            <rect x="320" y="75" width="90" height="50" rx="8" fill="#f3e8ff" stroke="#c084fc" strokeWidth="2"/>
+            <text x="365" y="100" textAnchor="middle" fontSize="11" fontWeight="700" fill="#7e22ce">GitHub</text>
+            <text x="365" y="112" textAnchor="middle" fontSize="9" fill="#6b21a8">Repo</text>
+
+            {/* Vercel */}
+            <rect x="470" y="75" width="90" height="50" rx="8" fill="#000000" stroke="#333333" strokeWidth="2"/>
+            <text x="515" y="100" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ffffff">Vercel</text>
+            <text x="515" y="112" textAnchor="middle" fontSize="9" fill="#a3a3a3">Edge Network</text>
+
+            {/* Users */}
+            <circle cx="515" cy="190" r="25" fill="#fee2e2" stroke="#f87171" strokeWidth="2"/>
+            <text x="515" y="194" textAnchor="middle" fontSize="11" fill="#991b1b" fontWeight="bold">Users</text>
+
+            {/* Arrows */}
+            <line x1="85" y1="100" x2="150" y2="100" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arr-blue)"/>
+            <text x="117" y="92" textAnchor="middle" fontSize="8" fill="#0284c7">Design/Code</text>
+
+            <line x1="210" y1="70" x2="210" y2="45" stroke="#4ade80" strokeWidth="1.5" strokeDasharray="3" markerEnd="url(#arr-green)"/>
+            <line x1="210" y1="130" x2="210" y2="155" stroke="#4ade80" strokeWidth="1.5" strokeDasharray="3" markerEnd="url(#arr-green)"/>
+
+            <line x1="260" y1="100" x2="310" y2="100" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#arr-slate)"/>
+            <text x="285" y="92" textAnchor="middle" fontSize="8" fill="#64748b">Push</text>
+
+            <line x1="410" y1="100" x2="460" y2="100" stroke="#c084fc" strokeWidth="2" markerEnd="url(#arr-purple)"/>
+            <text x="435" y="92" textAnchor="middle" fontSize="8" fill="#7e22ce">CI/CD</text>
+
+            <line x1="515" y1="125" x2="515" y2="155" stroke="#333333" strokeWidth="2" markerEnd="url(#arr-dark)"/>
+            <text x="535" y="145" textAnchor="middle" fontSize="8" fill="#525252">Serves</text>
+
+            <defs>
+                <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#38bdf8"/></marker>
+                <marker id="arr-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/></marker>
+                <marker id="arr-slate" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/></marker>
+                <marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c084fc"/></marker>
+                <marker id="arr-dark" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#333333"/></marker>
+            </defs>
+        </svg>
+        <p className="text-center text-xs text-slate-400 mt-3">Fig 1: The rapid development and deployment pipeline</p>
+    </div>
+);
+
 const BlogPostAnishAqua = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -66,22 +129,7 @@ const BlogPostAnishAqua = () => {
                         <li><strong>Hosting:</strong> Vercel for seamless CI/CD and edge delivery</li>
                     </ul>
 
-                    <div className="my-8 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 p-6">
-                        <pre className="mermaid flex justify-center bg-transparent">
-                            {`graph TD;
-    Developer[Developer + Antigravity AI] -->|Iterative Design & Code| React[React / Vite Application];
-    React -->|Component: Hero| UI[Responsive UI];
-    React -->|Component: Products| UI;
-    React -->|Component: FloatingWhatsApp| UI;
-    React -->|Styling| CSS[Vanilla CSS];
-    React -->|Push to GitHub| Git[GitHub Repository];
-    Git -->|Auto-trigger CI/CD| Vercel[Vercel Edge Network];
-    Vercel -->|Serves| Users[Customers in Coimbatore];`}
-                        </pre>
-                        <p className="text-center text-sm text-slate-500 mt-4">
-                            Fig 1: The rapid development and deployment pipeline
-                        </p>
-                    </div>
+                    <DevelopmentFlowDiagram />
 
                     <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">
                         Building the UI with AI Assistance
