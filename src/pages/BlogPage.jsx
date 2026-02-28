@@ -9,6 +9,15 @@ const BlogPage = () => {
 
     const blogPosts = [
         {
+            title: 'Building Anish Aqua Minerals Website with Antigravity',
+            excerpt: 'How I leveraged Antigravity AI to rapidly design, build, and deploy a responsive React web app for a new packaged drinking water business in Coimbatore.',
+            readTime: '6 min read',
+            date: 'February 28, 2026',
+            theme: { color: 'from-cyan-100 via-blue-100 to-indigo-100', emoji: '💧' },
+            tags: ['React', 'AI', 'Vite', 'Vercel'],
+            route: '/blog/anish-aqua-minerals-antigravity'
+        },
+        {
             title: 'Scaling from Zero to Millions of Users',
             excerpt: 'A visual journey of how modern systems evolve to handle massive scale. Learn about single servers, load balancing, caching, and sharding.',
             readTime: '7 min read',

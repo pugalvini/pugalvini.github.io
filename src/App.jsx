@@ -16,6 +16,7 @@ import BlogPostSigstore from './pages/BlogPostSigstore';
 import BlogPostCursor from './pages/BlogPostCursor';
 import BlogPostMSKIAM from './pages/BlogPostMSKIAM';
 import BlogPostScalingZeroToMillions from './pages/BlogPostScalingZeroToMillions';
+import BlogPostAnishAqua from './pages/BlogPostAnishAqua';
 import NotFoundPage from './pages/NotFoundPage';
 import SEO from './components/SEO';
 import './index.css';
@@ -48,6 +49,7 @@ function App() {
           <Route path="/blog/cursor-tdd-refactoring" element={<BlogPostCursor />} />
           <Route path="/blog/aws-msk-iam-auth" element={<BlogPostMSKIAM />} />
           <Route path="/blog/scaling-zero-to-millions" element={<BlogPostScalingZeroToMillions />} />
+          <Route path="/blog/anish-aqua-minerals-antigravity" element={<BlogPostAnishAqua />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
