@@ -135,21 +135,19 @@ const BlogPostAnishAqua = () => {
                         Building the UI with AI Assistance
                     </h2>
                     <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                        Working with Antigravity fundamentally changed how the UI was built. Rather than manually writing boilerplate, I could focus on the overarching design system and user flow. We broke the site down into distinct React components: <code>Hero.jsx</code>, <code>Products.jsx</code>, <code>Process.jsx</code>, and <code>Benefits.jsx</code>.
+                        Working with <strong>Antigravity</strong> fundamentally changed how the UI was built. Rather than manually writing boilerplate, I could act as the architect while the AI acted as a highly capable pair programmer. Antigravity handled the heavy lifting of scaffolding the React component tree, setting up the Vite configuration for optimal Hot Module Replacement (HMR), and generating responsive flexbox and grid layouts.
+                    </p>
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                        Because of this, the entire development and deployment cycle—from an empty folder to a live Vercel production URL—took just <strong>under 4 hours</strong>. This represents a roughly <strong>80% improvement in development speed</strong> compared to a traditional workflow, which would typically span a couple of days for designing, slicing, and coding the responsive views manually.
                     </p>
 
-                    {/* Screenshot Placeholder */}
+                    {/* Screenshot */}
                     <div className="my-10 bg-slate-100 rounded-xl border border-slate-200 p-2 overflow-hidden shadow-sm">
                         <div className="aspect-video bg-slate-200 rounded-lg flex items-center justify-center relative overflow-hidden group">
-                            {/* In production, replace the src below with the actual screenshot */}
                             <img 
-                                src="/assets/anish-aqua-screenshot-placeholder.jpg" 
+                                src="/assets/anish-aqua-homepage.png" 
                                 alt="Anish Aqua Minerals Homepage Interface" 
-                                className="w-full h-full object-cover text-transparent"
-                                onError={(e) => {
-                                    e.target.onerror = null; 
-                                    e.target.parentElement.innerHTML = '<div class="text-slate-400 font-medium flex flex-col items-center"><svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>Screenshot Placement: Anish Aqua Homepage</div>';
-                                }}
+                                className="w-full h-full object-cover"
                             />
                         </div>
                         <p className="text-center text-sm text-slate-500 mt-3 font-medium">
@@ -157,11 +155,14 @@ const BlogPostAnishAqua = () => {
                         </p>
                     </div>
 
+                    <h3 className="text-2xl font-serif font-semibold text-slate-900 mt-12 mb-4">
+                        Technical Highlights
+                    </h3>
                     <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                        One of the standout features we implemented was the <strong>Floating WhatsApp Widget</strong> (<code>FloatingWhatsApp.jsx</code>). For a local business in India, WhatsApp is the primary communication channel. By making this widget globally accessible on the site, we significantly reduced the friction for a customer wanting to order water cans or inquire about services.
+                        Antigravity was particularly helpful in ironing out technical nuances. For example, we implemented a <strong>Floating WhatsApp Widget</strong> (<code>FloatingWhatsApp.jsx</code>) globally across the app. Antigravity helped optimize the component logic to ensure the widget maintained its state and didn't unnecessarily re-render during route changes. 
                     </p>
                     <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                        Every component was styled using dedicated CSS files (e.g., <code>Navbar.css</code>, <code>Hero.css</code>). This vanilla approach kept the project dependency-light and allowed for pixel-perfect adjustments to micro-animations and hover effects.
+                        Additionally, every component was styled using dedicated CSS files (e.g., <code>Navbar.css</code>, <code>Hero.css</code>). Antigravity generated pixel-perfect micro-animations, hover states, and dynamic media queries for mobile-first responsiveness, keeping the project dependency-light by avoiding bulky UI libraries.
                     </p>
 
                     <h2 className="text-3xl font-serif font-bold text-slate-900 mt-12 mb-6">
