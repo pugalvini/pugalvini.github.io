@@ -8,6 +8,15 @@ const BlogPage = () => {
 
     const blogPosts = [
         {
+            title: 'Migrating AWS MSK to IAM Authentication for EKS Pods',
+            excerpt: 'Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.',
+            readTime: '6 min read',
+            date: 'July 14, 2026',
+            theme: { color: 'from-sky-100 via-cyan-100 to-blue-100', emoji: '☁️' },
+            tags: ['AWS', 'MSK', 'Kubernetes', 'Security'],
+            route: '/blog/aws-msk-iam-auth'
+        },
+        {
             title: 'Supercharging TDD and Refactoring with Cursor',
             excerpt: 'How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.',
             readTime: '7 min read',

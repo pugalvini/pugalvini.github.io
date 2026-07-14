@@ -14,6 +14,7 @@ import BlogPage from './pages/BlogPage';
 import BlogPostRateLimit from './pages/BlogPostRateLimit';
 import BlogPostSigstore from './pages/BlogPostSigstore';
 import BlogPostCursor from './pages/BlogPostCursor';
+import BlogPostMSKIAM from './pages/BlogPostMSKIAM';
 import NotFoundPage from './pages/NotFoundPage';
 import './index.css';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/blog/rate-limiting-algorithms" element={<BlogPostRateLimit />} />
           <Route path="/blog/sigstore-software-supply-chain" element={<BlogPostSigstore />} />
           <Route path="/blog/cursor-tdd-refactoring" element={<BlogPostCursor />} />
+          <Route path="/blog/aws-msk-iam-auth" element={<BlogPostMSKIAM />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
