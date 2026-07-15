@@ -5,7 +5,7 @@ const ExperienceTimeline = () => {
         {
             company: 'Guidewire',
             role: 'Software Engineer III',
-            period: 'August 2024 - Present',
+            period: 'August 2025 - Present',
             location: 'India',
             achievements: [
                 'Automating release workflows using AI agents, reducing manual intervention and improving deployment reliability',
@@ -18,7 +18,7 @@ const ExperienceTimeline = () => {
         {
             company: 'Thoughtworks',
             role: 'Senior Consultant (Application Developer)',
-            period: 'February 2021 - August 2024',
+            period: 'February 2021 - August 2025',
             location: 'India',
             achievements: [
                 'UBS Integration: Automated file transfers from GCS to Dropbox via SFTP achieving 100% automation; reduced API response time from 1 hour to under 20 minutes',
