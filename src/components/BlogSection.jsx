@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 const BlogSection = () => {
     const blogPosts = [
         {
+            title: 'Mastering Rate Limiting: 5 Algorithms You Need to Know',
+            excerpt: 'A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.',
+            readTime: '8 min read',
+            date: 'July 20, 2026',
+            image: '/blog/blog-3.jpg',
+            tags: ['System Design', 'Backend', 'Architecture'],
+            route: '/blog/rate-limiting-algorithms'
+        },
+        {
             title: 'Mentoring Interns in Tech: What I Wish I Knew Before',
             excerpt: 'Lessons learned from guiding a second-year college intern through a fast-paced product cycle. From structuring learning to communicating like a teacher, here\'s what I learned about mentorship.',
             readTime: '5 min read',
@@ -34,7 +43,7 @@ const BlogSection = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {blogPosts.map((post, index) => (
                     <Link
                         key={index}
@@ -81,6 +90,15 @@ const BlogSection = () => {
                         </div>
                     </Link>
                 ))}
+            </div>
+
+            <div className="text-center">
+                <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 hover:text-accent hover:border-accent rounded-full font-medium transition-all card-lift"
+                >
+                    View All Posts →
+                </Link>
             </div>
 
         </section>

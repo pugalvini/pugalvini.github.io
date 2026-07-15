@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -47,12 +47,12 @@ const Header = () => {
                                 >
                                     Home
                                 </button>
-                                <button
-                                    onClick={() => scrollToSection('blog')}
+                                <Link
+                                    to="/blog"
                                     className="text-slate-700 hover:text-accent transition-colors font-medium"
                                 >
                                     Blog
-                                </button>
+                                </Link>
                                 <a
                                     href="/Resume.pdf"
                                     target="_blank"

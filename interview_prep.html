@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Prep – Principia Mentis GmbH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #2563a8;
+      --accent2: #0ea5e9;
+      --green: #059669;
+      --amber: #d97706;
+      --red: #dc2626;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --code-bg: #1e293b;
+      --code-text: #e2e8f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 10pt;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 210mm;
+      margin: 0 auto;
+      background: white;
+    }
+
+    /* ── COVER PAGE ─────────────────────────────── */
+    .cover {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1a3a5c 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50mm 20mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,168,0.25) 0%, transparent 70%);
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
+    }
+
+    .cover-tag {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      margin-bottom: 16px;
+    }
+
+    .cover h1 {
+      font-size: 32pt;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cover h1 span {
+      color: #38bdf8;
+    }
+
+    .cover-sub {
+      font-size: 13pt;
+      color: #94a3b8;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .cover-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cover-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9.5pt;
+      color: #cbd5e1;
+    }
+
+    .cover-meta-item .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #2563a8);
+      border-radius: 2px;
+      margin: 24px 0;
+    }
+
+    /* ── CONTENT PAGES ──────────────────────────── */
+    .content {
+      padding: 14mm 16mm;
+    }
+
+    /* ── SECTION HEADERS ────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 22px 0 12px 0;
+      page-break-after: avoid;
+    }
+
+    .section-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 9pt;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      flex: 1;
+      padding-bottom: 4px;
+    }
+
+    .part-banner {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin: 18px 0 12px 0;
+      page-break-after: avoid;
+    }
+
+    .part-banner h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .part-banner p {
+      font-size: 8.5pt;
+      color: #bfdbfe;
+      margin-top: 2px;
+    }
+
+    /* ── Q&A CARDS ──────────────────────────────── */
+    .qa-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 10px 0;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    .qa-q {
+      background: #f1f5f9;
+      padding: 9px 14px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .qa-q .q-icon {
+      background: var(--accent);
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .qa-a {
+      padding: 10px 14px;
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .qa-a ul {
+      margin: 6px 0 0 16px;
+    }
+
+    .qa-a li {
+      margin-bottom: 4px;
+    }
+
+    .qa-a strong {
+      color: var(--primary);
+    }
+
+    /* ── CODE BLOCKS ────────────────────────────── */
+    .code-block {
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: 'Fira Code', monospace;
+      font-size: 7.5pt;
+      line-height: 1.6;
+      margin: 8px 0;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    .code-label {
+      font-size: 7pt;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      margin-bottom: 5px;
+    }
+
+    .kw { color: #c084fc; }   /* keyword */
+    .fn { color: #67e8f9; }   /* function */
+    .str { color: #86efac; }  /* string */
+    .cm { color: #64748b; }   /* comment */
+    .num { color: #fbbf24; }  /* number */
+    .op { color: #f472b6; }   /* operator */
+
+    /* ── COMPARISON TABLE ───────────────────────── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin: 8px 0;
+      page-break-inside: avoid;
+    }
+
+    .compare-table th {
+      background: var(--primary);
+      color: white;
+      padding: 7px 10px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .compare-table th:first-child { border-radius: 6px 0 0 0; }
+    .compare-table th:last-child  { border-radius: 0 6px 0 0; }
+
+    .compare-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+    }
+
+    .compare-table tr:nth-child(even) td { background: #f8fafc; }
+    .compare-table tr:last-child td:first-child { border-radius: 0 0 0 6px; }
+    .compare-table tr:last-child td:last-child  { border-radius: 0 0 6px 0; }
+
+    /* ── ALERT BOXES ─────────────────────────────── */
+    .alert {
+      border-radius: 6px;
+      padding: 9px 13px;
+      margin: 10px 0;
+      font-size: 8.5pt;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      page-break-inside: avoid;
+    }
+
+    .alert-icon { font-size: 11pt; flex-shrink: 0; line-height: 1.4; }
+
+    .alert.tip    { background: #f0fdf4; border-left: 3px solid #059669; color: #14532d; }
+    .alert.warn   { background: #fffbeb; border-left: 3px solid #d97706; color: #78350f; }
+    .alert.info   { background: #eff6ff; border-left: 3px solid #2563a8; color: #1e3a5f; }
+    .alert.danger { background: #fef2f2; border-left: 3px solid #dc2626; color: #7f1d1d; }
+
+    /* ── CHECKLIST ───────────────────────────────── */
+    .checklist {
+      list-style: none;
+      margin: 8px 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 9pt;
+      padding: 5px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      color: #334155;
+    }
+
+    .checklist li:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 14px; height: 14px;
+      border: 2px solid var(--accent);
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── ROLE PERMISSION TABLE ───────────────────── */
+    .role-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      margin: 8px 0;
+      page-break-inside: avoid;
+    }
+
+    .role-table th {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 6px 8px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .role-table th:first-child { text-align: left; border-radius: 6px 0 0 0; }
+    .role-table th:last-child  { border-radius: 0 6px 0 0; }
+
+    .role-table td {
+      padding: 5px 8px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      color: #334155;
+    }
+
+    .role-table td:first-child { text-align: left; font-weight: 600; color: var(--primary); }
+    .role-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .tick { color: #059669; font-weight: 700; }
+    .dash { color: #94a3b8; }
+
+    /* ── TAGS ────────────────────────────────────── */
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0; }
+    .tag {
+      background: #eff6ff;
+      color: #1e40af;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 99px;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* ── QUESTION BLOCK (numbered) ───────────────── */
+    .q-block {
+      margin: 12px 0;
+      page-break-inside: avoid;
+    }
+
+    .q-num-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .q-num {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 700;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .q-text {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      font-style: italic;
+    }
+
+    .a-text {
+      margin-left: 30px;
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.65;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border-left: 3px solid #e2e8f0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .a-text ul { margin: 4px 0 0 14px; }
+    .a-text li { margin-bottom: 3px; }
+    .a-text strong { color: var(--primary); }
+
+    /* ── PAGE BREAK ─────────────────────────────── */
+    .page-break { page-break-before: always; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .footer {
+      background: var(--primary);
+      color: #94a3b8;
+      text-align: center;
+      padding: 10px;
+      font-size: 7.5pt;
+      margin-top: 20px;
+    }
+
+    .footer strong { color: white; }
+
+    @media print {
+      body { background: white; }
+      .page { width: 100%; }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════════════════════════ COVER -->
+  <div class="cover">
+    <div class="cover-tag">Technical Interview · June 2026</div>
+    <h1>Interview <span>Prep</span><br>Guide</h1>
+    <div class="cover-sub">Principia Mentis GmbH · Senior Backend Web Developer</div>
+    <div class="cover-divider"></div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><span class="dot"></span>Candidate: Vinitha Pukazh Bagya R</div>
+      <div class="cover-meta-item"><span class="dot"></span>Format: ~2-hour technical interview via Microsoft Teams</div>
+      <div class="cover-meta-item"><span class="dot"></span>Interviewers: Nikolaus Kirstein &amp; Andreas Bergmaier</div>
+      <div class="cover-meta-item"><span class="dot"></span>Topics: SQL Schema · JavaScript/TypeScript · Node.js · Web Technologies</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ CONTENT -->
+  <div class="content">
+
+    <!-- ── OVERVIEW ──────────────────────────────────── -->
+    <div class="section-header">
+      <div class="section-num">★</div>
+      <div class="section-title">What to Expect</div>
+    </div>
+
+    <div class="alert info">
+      <span class="alert-icon">ℹ️</span>
+      <div>The interview has <strong>two parts</strong>: (1) a deep-dive into your submitted <code>schema.sql</code> challenge, then (2) broader technical questions on JS/TS, Node.js, SQL, and web technologies. Duration is approximately 2 hours.</div>
+    </div>
+
+    <div class="alert tip">
+      <span class="alert-icon">💡</span>
+      <div><strong>Their philosophy:</strong> "We're mostly interested in your thought process, the questions you encounter along the way, the assumptions, decisions and trade-offs you make." — Think out loud. Acknowledge trade-offs. Don't try to give a "perfect" answer.</div>
+    </div>
+
+    <div class="alert warn">
+      <span class="alert-icon">⚠️</span>
+      <div><strong>AI transparency:</strong> They specifically asked you to be open if you used AI. Prepare a brief, honest answer about how you used it and what you contributed yourself.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ PART 1 -->
+    <div class="page-break"></div>
+    <div class="part-banner">
+      <h2>PART 1 — Schema Challenge Deep-Dive</h2>
+      <p>They will walk through your schema.sql line by line. Know every design decision cold.</p>
+    </div>
+
+    <!-- SECTION A -->
+    <div class="section-header">
+      <div class="section-num">A</div>
+      <div class="section-title">Tree Structure Design (Question 1)</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">1</div><div class="q-text">"Walk us through how you modelled the tree structure."</div></div>
+      <div class="a-text">
+        I used a <strong>hybrid approach</strong>: an adjacency list (<code>parent_id</code>) plus a materialized path (<code>path</code> TEXT column).
+        <ul>
+          <li><strong>Adjacency list</strong> (<code>parent_id FK → task_node.id</code>) gives a simple, natural parent-child link and easy writes.</li>
+          <li><strong>Materialized path</strong> stores each node's full ancestry as a delimited string, e.g. <code>/1/4/7/</code>. This enables fast ancestor/descendant queries with a simple <code>LIKE '/1/4/%'</code> — no recursive CTE needed at query time.</li>
+        </ul>
+        I chose this hybrid because tree reads (permission checks, subtree traversals) are far more frequent than writes in a project management tool.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">2</div><div class="q-text">"What does the path column look like in practice?"</div></div>
+      <div class="a-text">
+        Each node stores the IDs of all its ancestors plus its own ID, delimited by slashes. For example:
+        <ul>
+          <li>Root node (id=1): <code>/1/</code></li>
+          <li>Child of root (id=4): <code>/1/4/</code></li>
+          <li>Grandchild (id=7): <code>/1/4/7/</code></li>
+        </ul>
+        To get all descendants of node 4: <code>WHERE path LIKE '/1/4/%'</code><br>
+        To get all ancestors of node 7: <code>WHERE '/1/4/7/' LIKE path || '%'</code>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">3</div><div class="q-text">"Compare tree storage strategies — why not nested sets or a closure table?"</div></div>
+      <div class="a-text">
+        <table class="compare-table">
+          <tr><th>Approach</th><th>Read Speed</th><th>Write Speed</th><th>Query Style</th></tr>
+          <tr><td>Adjacency List</td><td>Slow (recursive)</td><td>Fast</td><td>WITH RECURSIVE CTE</td></tr>
+          <tr><td>Materialized Path ✓</td><td>Fast</td><td>Medium</td><td>Simple LIKE query</td></tr>
+          <tr><td>Nested Sets (left/right)</td><td>Fast</td><td>Very slow</td><td>Range query</td></tr>
+          <tr><td>Closure Table</td><td>Fast</td><td>Medium</td><td>Extra join table</td></tr>
+        </table>
+        My hybrid gets the best of adjacency list (simple structure, foreign key integrity) and materialized path (fast read queries) without the write-heavy complexity of nested sets.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">4</div><div class="q-text">"What happens to the path when a node is moved to a different parent?"</div></div>
+      <div class="a-text">
+        Moving a node requires updating <code>path</code> for the node itself and all its descendants. I would do a cascading UPDATE:
+        <div class="code-block">
+          <div class="code-label">SQL — Move node subtree</div>
+<span class="kw">UPDATE</span> task_node
+<span class="kw">SET</span>    path <span class="op">=</span> new_parent_path <span class="op">||</span> substring(path <span class="kw">FROM</span> length(old_path) <span class="op">+</span> <span class="num">1</span>)
+<span class="kw">WHERE</span>  path <span class="kw">LIKE</span> old_path <span class="op">||</span> <span class="str">'%'</span>;
+        </div>
+        This is a known trade-off of materialized paths — moves are more expensive than with a pure adjacency list. For a project management tool where moves are rare, this is acceptable.
+      </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="section-header">
+      <div class="section-num">B</div>
+      <div class="section-title">Recursive SQL Queries (Question 2)</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">5</div><div class="q-text">"Write a recursive SQL query on this schema — e.g. get all descendants of a node."</div></div>
+      <div class="a-text">
+        <div class="code-block">
+          <div class="code-label">SQL — Recursive CTE: all descendants</div>
+<span class="kw">WITH RECURSIVE</span> subtree <span class="kw">AS</span> (
+  <span class="cm">-- Anchor: starting node</span>
+  <span class="kw">SELECT</span> id, parent_id, text, <span class="num">1</span> <span class="kw">AS</span> depth
+  <span class="kw">FROM</span>   task_node
+  <span class="kw">WHERE</span>  id <span class="op">=</span> :start_node_id
+
+  <span class="kw">UNION ALL</span>
+
+  <span class="cm">-- Recursive: join children of current set</span>
+  <span class="kw">SELECT</span> tn.id, tn.parent_id, tn.text, st.depth <span class="op">+</span> <span class="num">1</span>
+  <span class="kw">FROM</span>   task_node tn
+  <span class="kw">JOIN</span>   subtree st <span class="kw">ON</span> tn.parent_id <span class="op">=</span> st.id
+)
+<span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> subtree <span class="kw">ORDER BY</span> depth;
+        </div>
+        <strong>To get ancestors instead:</strong> reverse the join condition — <code>JOIN subtree st ON st.parent_id = tn.id</code> — starting from the target node upward.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">6</div><div class="q-text">"What are the risks of recursive CTEs on deep trees?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>Infinite loops:</strong> If there's a cycle in parent_id (data corruption), the CTE loops forever. Mitigate with a <code>depth &lt; 100</code> guard or PostgreSQL's built-in cycle detection.</li>
+          <li><strong>Performance:</strong> Deep trees with many nodes can be slow — each recursive step is a join. For very deep trees, the materialized path approach is better for reads.</li>
+          <li><strong>Stack depth:</strong> Very deep recursion can hit server limits.</li>
+        </ul>
+        This is why I chose the materialized path approach for permission queries — it avoids recursion entirely at query time.
+      </div>
+    </div>
+
+    <!-- SECTION C -->
+    <div class="page-break"></div>
+    <div class="section-header">
+      <div class="section-num">C</div>
+      <div class="section-title">Roles &amp; Permissions Schema (Question 3 — Core)</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">7</div><div class="q-text">"Walk us through your roles and permissions design."</div></div>
+      <div class="a-text">
+        My schema has four tables working together:
+        <ul>
+          <li><strong>user_role:</strong> Assigns a user a role at a specific node — <code>(user_id, node_id, role_id)</code>. One user can have different roles at different nodes.</li>
+          <li><strong>role_permission:</strong> Defines what permissions a role grants, and crucially, <em>in which scope</em> — using a <code>node_scope</code> ENUM: <code>node_only</code>, <code>descendants</code>, or <code>ancestors</code>.</li>
+          <li>At query time, I resolve which scope applies by comparing the target node's path to the assignment node's path.</li>
+        </ul>
+        This lets me express rules like: "Viewer gets <code>ViewStructure</code> on the assigned node and its descendants, but only <code>ViewStructure</code> (not ViewData) on ancestors."
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">8</div><div class="q-text">"Why a node_scope ENUM rather than separate boolean columns or separate join tables?"</div></div>
+      <div class="a-text">
+        Three booleans (<code>at_node</code>, <code>at_descendants</code>, <code>at_ancestors</code>) would work too — this is a valid trade-off. I chose an ENUM because:
+        <ul>
+          <li>It's readable and self-documenting — the scope is explicit</li>
+          <li>The primary key <code>(role_id, permission_id, node_scope)</code> is clean and prevents duplicates</li>
+          <li>It maps directly to the three relationship types in the problem statement</li>
+        </ul>
+        The downside is that you can't express partial scope (e.g., "only direct children"). If that requirement emerged, I'd switch to a more flexible model.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">9</div><div class="q-text">"Show the role-permission matrix for all four roles."</div></div>
+      <div class="a-text">
+        <table class="role-table">
+          <tr>
+            <th>Role → Scope</th>
+            <th>ViewStructure</th>
+            <th>EditStructure</th>
+            <th>ViewData</th>
+            <th>EditData</th>
+          </tr>
+          <tr><td>Admin @ node_only</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Admin @ descendants</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Admin @ ancestors</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Requester @ node_only</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Requester @ descendants</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Requester @ ancestors</td><td class="tick">✓</td><td class="dash">—</td><td class="tick">✓</td><td class="dash">—</td></tr>
+          <tr><td>Responsible @ node_only</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Responsible @ descendants</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+          <tr><td>Responsible @ ancestors</td><td class="tick">✓</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td></tr>
+          <tr><td>Viewer @ node_only</td><td class="tick">✓</td><td class="dash">—</td><td class="tick">✓</td><td class="dash">—</td></tr>
+          <tr><td>Viewer @ descendants</td><td class="tick">✓</td><td class="dash">—</td><td class="tick">✓</td><td class="dash">—</td></tr>
+          <tr><td>Viewer @ ancestors</td><td class="tick">✓</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">10</div><div class="q-text">"Explain your big permission-resolution query step by step."</div></div>
+      <div class="a-text">
+        The query finds all effective permissions for a user on a specific target node:
+        <ul>
+          <li><strong>Step 1:</strong> Start with the <code>target</code> node.</li>
+          <li><strong>Step 2:</strong> JOIN all nodes <code>gn</code> ("granted from node") that have a relationship to target — either same node, ancestor of target, or descendant of target. This uses <code>LIKE</code> on the <code>path</code> column.</li>
+          <li><strong>Step 3:</strong> Filter <code>user_role</code> — only where the given user has a role assignment at node <code>gn</code>.</li>
+          <li><strong>Step 4:</strong> Match <code>role_permission</code> using a <code>CASE</code> expression to determine which scope applies: if <code>gn = target</code> → <code>node_only</code>; if <code>gn</code> is ancestor of target → <code>ancestors</code>; if <code>gn</code> is descendant → <code>descendants</code>.</li>
+          <li><strong>Step 5:</strong> Return the permission name, the role that granted it, and the node it was granted from.</li>
+        </ul>
+        This resolves permissions dynamically at query time without pre-computing or caching.
+      </div>
+    </div>
+
+    <!-- SECTION D -->
+    <div class="section-header">
+      <div class="section-num">D</div>
+      <div class="section-title">Known Weaknesses &amp; Probing Questions</div>
+    </div>
+
+    <div class="alert warn">
+      <span class="alert-icon">⚠️</span>
+      <div>They will probe for weaknesses in your design. Having good answers to these shows maturity and honest engineering thinking.</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">11</div><div class="q-text">"Your path is a plain TEXT column — how do you enforce consistency?"</div></div>
+      <div class="a-text">
+        Honestly, a plain TEXT column has no DB-level format constraint. In production I'd add:
+        <ul>
+          <li>A CHECK constraint or trigger to validate the format matches <code>/(\d+/)+</code></li>
+          <li>Application-level validation on insert/update</li>
+          <li>Alternatively, use PostgreSQL's native <strong>ltree extension</strong> which is purpose-built for this — it handles path indexing, format validation, and provides built-in operators like <code>@&gt;</code> (ancestor of) and <code>&lt;@</code> (descendant of)</li>
+        </ul>
+        I kept it as plain TEXT to avoid extension dependency, but ltree would be the production-grade choice.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">12</div><div class="q-text">"Can a user get duplicate permissions from your query?"</div></div>
+      <div class="a-text">
+        Yes — if a user has role assignments at multiple nodes in the tree, the same permission can appear multiple times from different sources. The query as written returns all grants with their origin, which is useful for auditing. To get a deduplicated list of effective permissions, wrap it in a <code>SELECT DISTINCT p.name</code> or use a subquery.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">13</div><div class="q-text">"What about performance at scale — large trees, many users?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>Indexing path:</strong> <code>LIKE '/1/4/%'</code> queries benefit from a B-tree index on <code>path</code> (prefix queries work). For PostgreSQL, a GIN index or the <code>ltree</code> extension with <code>GiST</code> indexing is even better.</li>
+          <li><strong>Caching permissions:</strong> For hot paths, compute and cache a user's effective permissions (e.g. in Redis) and invalidate on role changes.</li>
+          <li><strong>Denormalisation:</strong> A closure table (all ancestor-descendant pairs pre-stored) makes permission queries a simple join — at the cost of more storage and write overhead.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">14</div><div class="q-text">"How would you handle conflicting permissions — most permissive or most restrictive wins?"</div></div>
+      <div class="a-text">
+        My current schema uses a <strong>most-permissive / union model</strong> — if any role grant gives a permission, the user has it. To implement most-restrictive wins or explicit deny, I'd need to add a <code>grant_type</code> column (<code>allow</code> / <code>deny</code>) to <code>role_permission</code>, then resolve with priority logic in the query. This is a deliberate design choice worth discussing with the team based on their actual product requirements.
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ PART 2 -->
+    <div class="page-break"></div>
+    <div class="part-banner">
+      <h2>PART 2 — Technical Questions</h2>
+      <p>JavaScript/TypeScript · Node.js · SQL · Web Technologies</p>
+    </div>
+
+    <!-- JAVASCRIPT / TYPESCRIPT -->
+    <div class="section-header">
+      <div class="section-num">E</div>
+      <div class="section-title">JavaScript &amp; TypeScript</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">15</div><div class="q-text">"What is the event loop in JavaScript?"</div></div>
+      <div class="a-text">
+        JavaScript is single-threaded. The event loop coordinates three layers:
+        <ul>
+          <li><strong>Call stack:</strong> Executes synchronous code.</li>
+          <li><strong>Microtask queue:</strong> Holds resolved Promises and <code>queueMicrotask()</code> callbacks. Drained completely before each macrotask.</li>
+          <li><strong>Macrotask queue:</strong> Holds <code>setTimeout</code>, <code>setInterval</code>, I/O callbacks.</li>
+        </ul>
+        After each call stack frame, the engine drains all microtasks, then picks one macrotask, then drains microtasks again — repeat.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">16</div><div class="q-text">"Explain callbacks → Promises → async/await evolution."</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>Callbacks:</strong> Pass a function to be called when async work completes. Leads to "callback hell" — deeply nested, hard to read/handle errors.</li>
+          <li><strong>Promises:</strong> Object representing a future value. Chainable with <code>.then()</code>/<code>.catch()</code>. Much more readable, error propagation works naturally.</li>
+          <li><strong>async/await:</strong> Syntactic sugar over Promises. Makes async code look synchronous. Use try/catch for error handling. Under the hood it's still Promises.</li>
+        </ul>
+        In my Node.js work at Guidewire and Thoughtworks, I exclusively used async/await with proper error boundaries.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">17</div><div class="q-text">"interface vs type in TypeScript — when do you use each?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>interface:</strong> For defining the shape of objects. Supports declaration merging (multiple declarations with same name merge). Preferred for public APIs and class contracts.</li>
+          <li><strong>type:</strong> More flexible — supports unions (<code>string | number</code>), intersections (<code>A &amp; B</code>), mapped types, conditional types. Cannot be merged.</li>
+        </ul>
+        Rule of thumb: use <code>interface</code> for object shapes you'll extend; use <code>type</code> for unions, utility types, or complex compositions.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">18</div><div class="q-text">"What is a closure and give a practical example?"</div></div>
+      <div class="a-text">
+        A closure is a function that retains access to variables from its outer scope even after the outer function has returned.
+        <div class="code-block">
+<span class="kw">function</span> <span class="fn">makeCounter</span>() {
+  <span class="kw">let</span> count <span class="op">=</span> <span class="num">0</span>; <span class="cm">// enclosed variable</span>
+  <span class="kw">return</span> () <span class="op">=&gt;</span> <span class="op">++</span>count;
+}
+<span class="kw">const</span> counter <span class="op">=</span> <span class="fn">makeCounter</span>();
+counter(); <span class="cm">// 1</span>
+counter(); <span class="cm">// 2 — count persists across calls</span>
+        </div>
+        Closures are fundamental to patterns like memoization, partial application, and module encapsulation.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">19</div><div class="q-text">"What are TypeScript generics and when should you use them?"</div></div>
+      <div class="a-text">
+        Generics allow writing reusable, type-safe code where the concrete type is provided at call site.
+        <div class="code-block">
+<span class="kw">function</span> <span class="fn">identity</span>&lt;T&gt;(arg: T): T { <span class="kw">return</span> arg; }
+<span class="kw">const</span> s <span class="op">=</span> <span class="fn">identity</span>&lt;<span class="fn">string</span>&gt;(<span class="str">"hello"</span>); <span class="cm">// s: string</span>
+
+<span class="kw">type</span> ApiResponse&lt;T&gt; <span class="op">=</span> { data: T; error: <span class="fn">string</span> | <span class="kw">null</span> };
+        </div>
+        Use generics when the same logic applies to multiple types and you want to preserve type information (as opposed to using <code>any</code>).
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">20</div><div class="q-text">"What is the difference between == and === in JavaScript?"</div></div>
+      <div class="a-text">
+        <code>==</code> performs type coercion before comparison (<code>"1" == 1</code> is <code>true</code>). <code>===</code> is strict equality — no coercion, checks both value and type. Always use <code>===</code> unless you explicitly need coercion. This is a common source of bugs in JavaScript.
+      </div>
+    </div>
+
+    <!-- NODE.JS -->
+    <div class="page-break"></div>
+    <div class="section-header">
+      <div class="section-num">F</div>
+      <div class="section-title">Node.js</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">21</div><div class="q-text">"How does Node.js achieve concurrency with a single thread?"</div></div>
+      <div class="a-text">
+        Node.js uses <strong>non-blocking I/O</strong> via <strong>libuv</strong>. When an I/O operation (DB query, file read, HTTP call) is initiated, Node registers a callback and continues executing other code. libuv uses an OS-level event notification system (epoll/kqueue) and a thread pool for operations that can't be made async natively (e.g. file system on some OSes).
+        <br><br>
+        This means one Node.js process can handle thousands of concurrent connections — as long as the main thread isn't blocked by CPU-intensive work. For CPU-heavy tasks, use Worker Threads or delegate to a separate service.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">22</div><div class="q-text">"Difference between process.nextTick(), setImmediate(), and setTimeout(fn, 0)?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>process.nextTick():</strong> Runs before the next I/O event — in the current iteration of the event loop, after the current operation completes. Highest priority.</li>
+          <li><strong>setImmediate():</strong> Runs in the "check" phase, after I/O callbacks in the same loop iteration.</li>
+          <li><strong>setTimeout(fn, 0):</strong> Runs in the "timers" phase of the next loop iteration. Slightly later than setImmediate in I/O context.</li>
+        </ul>
+        Order: <code>nextTick</code> → microtasks → I/O → <code>setImmediate</code> → <code>setTimeout</code>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">23</div><div class="q-text">"What is middleware in Express.js?"</div></div>
+      <div class="a-text">
+        Middleware are functions with the signature <code>(req, res, next)</code> that sit in the request-response pipeline. They can read/modify <code>req</code> and <code>res</code>, run async operations, and either end the response or call <code>next()</code> to pass to the next middleware.
+        <ul>
+          <li>Common uses: authentication, logging, error handling, body parsing, CORS headers</li>
+          <li>Error-handling middleware has 4 params: <code>(err, req, res, next)</code></li>
+        </ul>
+        I've used this pattern extensively — e.g. auth middleware that verified JWTs before reaching route handlers.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">24</div><div class="q-text">"How do you manage DB connection pooling in Node.js with PostgreSQL?"</div></div>
+      <div class="a-text">
+        Using the <code>pg</code> (node-postgres) library with a Pool:
+        <div class="code-block">
+<span class="kw">import</span> { Pool } <span class="kw">from</span> <span class="str">'pg'</span>;
+<span class="kw">const</span> pool <span class="op">=</span> <span class="kw">new</span> <span class="fn">Pool</span>({
+  connectionString: process.env.DATABASE_URL,
+  max: <span class="num">20</span>,         <span class="cm">// max pool size</span>
+  idleTimeoutMillis: <span class="num">30000</span>,
+  connectionTimeoutMillis: <span class="num">2000</span>
+});
+        </div>
+        Pool reuses connections instead of opening a new TCP connection per query. Key settings: <code>max</code> (pool size matching DB max_connections), <code>idleTimeoutMillis</code>, and <code>connectionTimeoutMillis</code>. Always release connections back to the pool (use <code>pool.query()</code> which auto-releases, or manually with <code>client.release()</code>).
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">25</div><div class="q-text">"How do you handle errors globally in a Node.js application?"</div></div>
+      <div class="a-text">
+        Three layers of error handling:
+        <ul>
+          <li><strong>Application level:</strong> try/catch in async functions; error-handling Express middleware</li>
+          <li><strong>Promise rejections:</strong> <code>process.on('unhandledRejection', (err) =&gt; { ... })</code></li>
+          <li><strong>Synchronous exceptions:</strong> <code>process.on('uncaughtException', (err) =&gt; { ... })</code> — log and gracefully shut down</li>
+        </ul>
+        Best practice: never swallow errors silently; always log with enough context; use structured logging (e.g. Winston, Pino) with correlation IDs.
+      </div>
+    </div>
+
+    <!-- SQL -->
+    <div class="page-break"></div>
+    <div class="section-header">
+      <div class="section-num">G</div>
+      <div class="section-title">SQL — Beyond the Challenge</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">26</div><div class="q-text">"What is a database index and when should you add one?"</div></div>
+      <div class="a-text">
+        An index is a separate data structure (typically a B-tree) that allows the DB to find rows matching a condition without scanning the entire table.
+        <ul>
+          <li><strong>Add indexes on:</strong> columns used in WHERE, JOIN ON, ORDER BY, GROUP BY</li>
+          <li><strong>Avoid over-indexing:</strong> Each index slows down INSERT/UPDATE/DELETE and uses storage</li>
+          <li><strong>Composite indexes:</strong> Column order matters — <code>(a, b)</code> helps queries on <code>a</code> or <code>(a, b)</code> but not <code>b</code> alone</li>
+          <li><strong>Partial indexes:</strong> Index only rows matching a condition — e.g. <code>WHERE deleted_at IS NULL</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">27</div><div class="q-text">"What are window functions and when do you use them?"</div></div>
+      <div class="a-text">
+        Window functions perform calculations across a set of rows related to the current row, without collapsing them into a single output row.
+        <div class="code-block">
+<span class="cm">-- Rank employees by salary within each department</span>
+<span class="kw">SELECT</span> name, department, salary,
+  <span class="fn">RANK</span>() <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> department <span class="kw">ORDER BY</span> salary <span class="kw">DESC</span>) <span class="kw">AS</span> rank
+<span class="kw">FROM</span> employees;
+        </div>
+        Common functions: <code>ROW_NUMBER()</code>, <code>RANK()</code>, <code>DENSE_RANK()</code>, <code>LAG()</code>, <code>LEAD()</code>, <code>SUM() OVER()</code>, <code>AVG() OVER()</code>. Use them for running totals, ranking, comparing current row to previous/next.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">28</div><div class="q-text">"CTE vs subquery — what's the difference and which is faster?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>CTE (WITH clause):</strong> Named, readable, can be referenced multiple times in the query, required for recursion. In PostgreSQL, non-recursive CTEs are sometimes optimisation fences (treated as materialised).</li>
+          <li><strong>Subquery:</strong> Inline, anonymous. The optimiser can sometimes push predicates into subqueries more aggressively.</li>
+          <li><strong>Performance:</strong> In modern PostgreSQL (12+), CTEs are generally inlined and optimised like subqueries unless marked <code>MATERIALIZED</code>. Use CTEs for readability; profile with EXPLAIN if performance matters.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">29</div><div class="q-text">"How do you diagnose a slow query in PostgreSQL?"</div></div>
+      <div class="a-text">
+        <div class="code-block">
+<span class="kw">EXPLAIN ANALYZE</span>
+  <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> task_node <span class="kw">WHERE</span> path <span class="kw">LIKE</span> <span class="str">'/1/4/%'</span>;
+        </div>
+        Look for:
+        <ul>
+          <li><strong>Seq Scan</strong> on large tables → missing index</li>
+          <li><strong>High actual rows vs estimated rows</strong> → stale statistics, run <code>ANALYZE</code></li>
+          <li><strong>Nested Loop on large sets</strong> → may need a Hash Join, or the join condition is unindexed</li>
+          <li><strong>High cost nodes</strong> → start optimisation there</li>
+        </ul>
+        Also check <code>pg_stat_statements</code> for most-called / slowest queries across the whole system.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">30</div><div class="q-text">"What is a transaction and what are isolation levels?"</div></div>
+      <div class="a-text">
+        A transaction groups SQL statements into an atomic unit — either all succeed or all roll back. Isolation levels control how concurrent transactions see each other's changes:
+        <ul>
+          <li><strong>READ UNCOMMITTED:</strong> Can see uncommitted changes (dirty reads) — rarely used in PostgreSQL</li>
+          <li><strong>READ COMMITTED (default):</strong> Only sees committed data. Each statement gets a fresh snapshot.</li>
+          <li><strong>REPEATABLE READ:</strong> Snapshot taken at transaction start — consistent reads throughout</li>
+          <li><strong>SERIALIZABLE:</strong> Full isolation — behaves as if transactions ran serially</li>
+        </ul>
+        Higher isolation = fewer anomalies but more locking/contention. Choose based on your consistency requirements.
+      </div>
+    </div>
+
+    <!-- WEB TECHNOLOGIES -->
+    <div class="page-break"></div>
+    <div class="section-header">
+      <div class="section-num">H</div>
+      <div class="section-title">Web Technologies</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">31</div><div class="q-text">"REST vs GraphQL — when would you pick one over the other?"</div></div>
+      <div class="a-text">
+        <ul>
+          <li><strong>REST:</strong> Resource-based, uses HTTP verbs (GET/POST/PUT/DELETE), simple to cache, widely understood. Great for simple CRUD APIs and public APIs.</li>
+          <li><strong>GraphQL:</strong> Client specifies exactly what data it needs — avoids over-fetching and under-fetching. Excellent for complex, nested data (like a task tree!) and multiple client types (mobile/web with different needs).</li>
+        </ul>
+        For this project management tool with a tree structure, GraphQL would be interesting — clients could query exactly the nodes and fields they need. I'd lean REST for simplicity unless the UI has varied data needs.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">32</div><div class="q-text">"What is CORS and how do you handle it in a Node.js API?"</div></div>
+      <div class="a-text">
+        CORS (Cross-Origin Resource Sharing) is a browser security mechanism that blocks web pages from making requests to a different origin (domain/port/protocol) than the page was served from.
+        <div class="code-block">
+<span class="kw">import</span> cors <span class="kw">from</span> <span class="str">'cors'</span>;
+app.<span class="fn">use</span>(<span class="fn">cors</span>({
+  origin: [<span class="str">'https://app.principiamentis.com'</span>],
+  methods: [<span class="str">'GET'</span>, <span class="str">'POST'</span>, <span class="str">'PUT'</span>, <span class="str">'DELETE'</span>],
+  credentials: <span class="kw">true</span>
+}));
+        </div>
+        The server adds <code>Access-Control-Allow-Origin</code> headers. Preflight OPTIONS requests are sent by browsers for non-simple requests.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">33</div><div class="q-text">"How does JWT authentication work?"</div></div>
+      <div class="a-text">
+        A JWT (JSON Web Token) has three base64-encoded parts: <code>header.payload.signature</code>.
+        <ul>
+          <li><strong>Header:</strong> Algorithm (e.g. HS256) and token type</li>
+          <li><strong>Payload:</strong> Claims — user ID, roles, expiry (not encrypted — don't store secrets here!)</li>
+          <li><strong>Signature:</strong> HMAC of header + payload using a secret key — server verifies this to trust the token</li>
+        </ul>
+        Flow: user logs in → server signs a JWT → client stores it → client sends it in <code>Authorization: Bearer &lt;token&gt;</code> header → server validates signature without hitting the DB. Stateless.
+        <br><br>
+        <strong>Downside:</strong> JWTs can't be invalidated before expiry without a token blacklist. Use short expiry + refresh tokens.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">34</div><div class="q-text">"What is event-driven architecture and where have you used it?"</div></div>
+      <div class="a-text">
+        In event-driven architecture, services communicate by publishing and subscribing to events (messages) via a message broker, rather than calling each other directly (synchronous HTTP).
+        <br><br>
+        <strong>My experience:</strong> At Thoughtworks, I built a Workday integration that published user change events to GCP Pub/Sub. Downstream services subscribed and updated their own data stores asynchronously. This decoupled the services, improved resilience (if a subscriber is down, events queue up), and saved ~30 minutes per change request.
+        <br><br>
+        Benefits: loose coupling, scalability, resilience. Trade-offs: eventual consistency, harder to trace flows, need idempotency.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">35</div><div class="q-text">"How would you design a role-based access control system in a Node.js API?"</div></div>
+      <div class="a-text">
+        Directly relevant to this job! My approach:
+        <ul>
+          <li><strong>Auth middleware:</strong> Validate JWT, attach user object with roles to <code>req.user</code></li>
+          <li><strong>Permission middleware:</strong> For each route, check if user's role has the required permission — query the DB or check a cached permission set</li>
+          <li><strong>Attribute-based:</strong> For complex cases (like this tree), resolve permissions at the resource level — pass the node ID to a permission service that runs the schema query</li>
+        </ul>
+        <div class="code-block">
+<span class="cm">// Middleware example</span>
+<span class="kw">const</span> <span class="fn">requirePermission</span> = (permission: <span class="fn">string</span>) =>
+  <span class="kw">async</span> (req, res, next) => {
+    <span class="kw">const</span> nodeId <span class="op">=</span> req.params.nodeId;
+    <span class="kw">const</span> hasPermission <span class="op">=</span> <span class="kw">await</span> <span class="fn">checkPermission</span>(req.user.id, nodeId, permission);
+    <span class="kw">if</span> (!hasPermission) <span class="kw">return</span> res.<span class="fn">status</span>(<span class="num">403</span>).<span class="fn">json</span>({ error: <span class="str">'Forbidden'</span> });
+    <span class="fn">next</span>();
+  };
+        </div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">36</div><div class="q-text">"What is HTTP caching and how does it work?"</div></div>
+      <div class="a-text">
+        HTTP caching reduces server load and latency by storing responses:
+        <ul>
+          <li><strong>Cache-Control:</strong> Directives like <code>max-age=3600</code>, <code>no-cache</code>, <code>private</code>, <code>public</code></li>
+          <li><strong>ETag:</strong> Server sends a hash of the resource; client sends it back in <code>If-None-Match</code>; server returns 304 Not Modified if unchanged</li>
+          <li><strong>Last-Modified / If-Modified-Since:</strong> Similar but time-based</li>
+        </ul>
+        For a permission-heavy API, be careful caching responses — cached data may reflect stale permissions. Use <code>no-store</code> or short <code>max-age</code> for permission-sensitive endpoints.
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ DAY-OF CHECKLIST -->
+    <div class="page-break"></div>
+    <div class="part-banner">
+      <h2>Day-of Checklist &amp; Questions to Ask Them</h2>
+      <p>Final preparation steps and how to leave a great impression</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">✓</div>
+      <div class="section-title">Before the Interview</div>
+    </div>
+
+    <ul class="checklist">
+      <li><span class="check-box"></span>Re-read your schema.sql line by line — know every line cold and be ready to explain it</li>
+      <li><span class="check-box"></span>Set up a live demo DB: load schema.sql, seed roles/permissions/nodes, run the permission query (optional but impressive)</li>
+      <li><span class="check-box"></span>Practice writing the recursive CTE on paper or a blank editor — you may be asked live</li>
+      <li><span class="check-box"></span>Prepare your "AI usage" answer honestly — what you used it for, what decisions you made yourself</li>
+      <li><span class="check-box"></span>Review your Thoughtworks Node.js + PostgreSQL experience (Compensation Uploader, Workday integration)</li>
+      <li><span class="check-box"></span>Prepare 2–3 questions to ask them (see below)</li>
+      <li><span class="check-box"></span>Test your Teams setup — audio, video, screen share — the night before</li>
+      <li><span class="check-box"></span>Have your schema.sql open and ready to share your screen</li>
+    </ul>
+
+    <div class="section-header">
+      <div class="section-num">?</div>
+      <div class="section-title">Questions to Ask Them</div>
+    </div>
+
+    <div class="alert tip">
+      <span class="alert-icon">💡</span>
+      <div>Asking good questions shows genuine interest and technical depth. Aim for 2–3 at the end.</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">→</div><div class="q-text">"Is the tree structure the core domain of your product? How deep do real-world trees get?"</div></div>
+      <div class="a-text">Shows you're thinking about production scale and real use cases.</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">→</div><div class="q-text">"How do you currently handle permission caching — computed at query time or cached?"</div></div>
+      <div class="a-text">Shows you've thought about performance beyond the schema design.</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">→</div><div class="q-text">"What's the current tech stack for the backend — Node.js, TypeScript, PostgreSQL?"</div></div>
+      <div class="a-text">Practical and helps you understand the role better.</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num-row"><div class="q-num">→</div><div class="q-text">"What's the biggest technical challenge the team is working on right now?"</div></div>
+      <div class="a-text">Great conversation starter that shows you're thinking about contribution.</div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">★</div>
+      <div class="section-title">Strengths to Highlight from Your Resume</div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">Node.js Backend (Guidewire + Thoughtworks)</span>
+      <span class="tag">PostgreSQL + Alembic Migrations</span>
+      <span class="tag">Microservices Architecture</span>
+      <span class="tag">GCP Pub/Sub Event-Driven Systems</span>
+      <span class="tag">40% Release Effort Reduction (Guidewire)</span>
+      <span class="tag">Mentored 6 Junior Engineers</span>
+      <span class="tag">Terraform IaC</span>
+      <span class="tag">Threat Modelling</span>
+    </div>
+
+    <div class="alert tip">
+      <span class="alert-icon">🎯</span>
+      <div>When answering general technical questions, ground your answers in real experience. E.g., "In the Compensation Uploader project at Thoughtworks, we used Node.js with PostgreSQL and I faced a similar challenge where..." This makes your answers memorable and credible.</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <strong>Vinitha Pukazh Bagya R</strong> · Senior Backend Web Developer · Interview with Principia Mentis GmbH · June 2026 · Good luck! 🍀
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

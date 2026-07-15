@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – Vinitha Pukazh Bagya R</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: #eaecf0;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 9mm 15mm 9mm 15mm;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1a3a5c;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0; right: 0;
+            height: 1px;
+            background: #c8d8ee;
+        }
+
+        .header-left h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #1a3a5c;
+            letter-spacing: 0.3px;
+            line-height: 1.1;
+            margin-bottom: 1px;
+        }
+
+        .header-left .job-title {
+            font-size: 11.5pt;
+            color: #2563a8;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-block {
+            font-size: 9.5pt;
+            color: #444;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 0px;
+            margin-top: 10px;
+        }
+
+        .contact-block span { display: flex; align-items: center; gap: 5px; }
+        .contact-block a { color: #2563a8; text-decoration: none; }
+
+        .icon {
+            font-style: normal;
+            font-size: 10pt;
+            width: 14px;
+            text-align: center;
+            flex-shrink: 0;
+            color: #2563a8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon svg { width: 10px; height: 10px; fill: #2563a8; flex-shrink: 0; }
+
+        .photo-box {
+            width: 88px;
+            height: 108px;
+            flex-shrink: 0;
+            margin-left: 12px;
+            border: 1.5px solid #c8d4e0;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #f0f4f8;
+        }
+
+        .photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+        .section { margin-bottom: 5px; }
+
+        .section-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: #1a3a5c;
+            border-bottom: 1.5px solid #1a3a5c;
+            padding-bottom: 2px;
+            margin-bottom: 4px;
+            margin-top: 10px;
+        }
+
+        .cv-row {
+            display: grid;
+            grid-template-columns: 108px 1fr;
+            gap: 0 12px;
+            margin-bottom: 5px;
+        }
+
+        .cv-row:last-child { margin-bottom: 0; }
+
+        .cv-date {
+            font-size: 9.5pt;
+            color: #555;
+            font-weight: 500;
+            padding-top: 2px;
+            white-space: nowrap;
+        }
+
+        .cv-content { padding-left: 9px; }
+
+        .cv-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1px;
+        }
+
+        .cv-company-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+            margin-bottom: 1px;
+        }
+
+        .cv-subtitle { font-size: 9.5pt; color: #2563a8; font-weight: 600; }
+
+        .cv-location {
+            font-size: 9pt;
+            color: #888;
+            margin-left: 6px;
+            font-weight: 400;
+        }
+
+        .cv-location::before { content: '·'; margin-right: 5px; color: #bbb; }
+
+        .cv-content ul { margin-left: 11px; margin-top: 2px; }
+
+        .cv-content li {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 2px;
+            line-height: 1.55;
+        }
+
+        .cv-content li strong { color: #1a1a1a; }
+
+        .personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 20px;
+        }
+
+        .pd-item { display: flex; gap: 6px; font-size: 9.5pt; }
+        .pd-label { font-weight: 600; color: #333; min-width: 100px; flex-shrink: 0; }
+        .pd-value { color: #444; }
+
+        .skills-table {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 3px 12px;
+            font-size: 9.5pt;
+        }
+
+        .sk-label { font-weight: 600; color: #333; padding-top: 1px; }
+        .sk-value { color: #444; line-height: 1.4; }
+
+        .lang-inline {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 9.5pt;
+            margin-top: 8px;
+        }
+
+        .lang-group { display: flex; align-items: center; gap: 5px; }
+        .lang-name { font-weight: 600; color: #1a1a1a; }
+        .lang-level { color: #2563a8; font-weight: 500; }
+        .lang-sep { color: #c8d4e0; }
+        .lang-separator { padding: 0 20px; }
+
+        @media print {
+            body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page { width: 100%; padding: 0; margin: 0; box-shadow: none; }
+            .section { page-break-inside: auto; }
+            .cv-row { page-break-inside: avoid; }
+            .header { page-break-inside: avoid; }
+        }
+
+        @page { size: A4; margin: 7mm 14mm; }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <h1>Vinitha Pukazh Bagya R</h1>
+            <div class="job-title">Software Engineer III</div>
+            <div class="contact-block">
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></i>
+                    Bangalore, India
+                </span>
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></i>
+                    <a href="mailto:pukazhvinitha@gmail.com">pukazhvinitha@gmail.com</a>
+                </span>
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></i>
+                    +91 733 958 6277
+                </span>
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></i>
+                    <a href="https://linkedin.com/in/pukazhvinitha" target="_blank">linkedin.com/in/pukazhvinitha</a>
+                </span>
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></i>
+                    <a href="https://pugalvini.github.io" target="_blank">pugalvini.github.io</a>
+                </span>
+                <span>
+                    <i class="icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></i>
+                     Relocating to Germany (Chancenkarte valid)
+                </span>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="../.resume/photo.png" alt="Application photo – Vinitha Pukazh Bagya R">
+        </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <!-- Guidewire -->
+        <div class="cv-row">
+            <div class="cv-date">08.2025 – present</div>
+            <div class="cv-content">
+                <div class="cv-title">Product Engineer</div>
+                <div class="cv-company-line">
+                    <span class="cv-subtitle">Guidewire Software</span>
+                    <span class="cv-location">Bangalore, India</span>
+                </div>
+                <ul>
+                    <li><strong>Product-Minded Development:</strong> Ship major enterprise features end-to-end (spec to ship), making highly autonomous, pragmatic architectural choices within greenfield product contexts</li>
+                    <li><strong>Deep AI Integration:</strong> Deeply embed AI into daily coding tasks (utilizing Cursor, Claude, Copilot) to achieve radical simplicity in complex business processes and drastically accelerate v1 iterations</li>
+                    <li>Operate as a core contributor with an eye for UI/Frontend details (React/TypeScript) while influencing full-stack technologies and data models (PostgreSQL)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Thoughtworks -->
+        <div class="cv-row">
+            <div class="cv-date">02.2021 – 08.2025</div>
+            <div class="cv-content">
+                <div class="cv-title">Senior Consultant – Full Stack Engineer</div>
+                <div class="cv-company-line">
+                    <span class="cv-subtitle">Thoughtworks India Pvt. Ltd.</span>
+                    <span class="cv-location">Bangalore, India</span>
+                </div>
+                <ul>
+                    <li><strong>Greenfield Building:</strong> Architected and delivered highly scalable financial/tax data reconciliation pipelines for global clients (UBS), driving product iterations from 0→1 in fast-paced agile environments</li>
+                    <li><strong>Modern Stack:</strong> Engineered responsive web applications and complex backend logic using <strong>React, TypeScript, Node.js, and Python (FastAPI style routing)</strong></li>
+                    <li><strong>Leadership & Scaling:</strong> Mentored junior engineers and led cross-functional technical tracks; utilized Docker and modern orchestration to lay robust foundations for scale without legacy constraints</li>
+                    <li>Continuously iterated on product features based on direct user feedback, balancing a fast-shipping mindset with reliable core architectures</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Amphisoft -->
+        <div class="cv-row">
+            <div class="cv-date">06.2018 – 01.2021</div>
+            <div class="cv-content">
+                <div class="cv-title">Software Developer</div>
+                <div class="cv-company-line">
+                    <span class="cv-subtitle">Amphisoft Technologies</span>
+                    <span class="cv-location">Coimbatore, India</span>
+                </div>
+                <ul>
+                    <li>Spearheaded front-end feature development for B2B applications utilizing modern JavaScript frameworks (React, Vue concepts) while actively contributing to backend services (Python, Node.js)</li>
+                    <li>Thrived in an early-stage, product-driven startup environment, establishing an eye for detail in UI implementations and backend database models</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="cv-row">
+            <div class="cv-date">04.2014 – 03.2018</div>
+            <div class="cv-content">
+                <div class="cv-title">B.E. in Computer Science and Engineering <span style="font-weight:400;font-size:8pt;color:#666;margin-left:4px;">CGPA: 7.5 / 10 (First Class)</span></div>
+                <div class="cv-company-line">
+                    <span class="cv-subtitle">Sri Eshwar College of Engineering, Anna University</span>
+                    <span class="cv-location">Coimbatore, India</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-table">
+            <div class="sk-label">Frontend & UI:</div>
+            <div class="sk-value">React, TypeScript, Next.js concepts, Vue, JavaScript, Tailwind, UI Design</div>
+
+            <div class="sk-label">Backend & Data:</div>
+            <div class="sk-value">Node.js, Python (FastAPI), PostgreSQL, Data Modeling, Core APIs</div>
+
+            <div class="sk-label">Cloud &amp; Infra:</div>
+            <div class="sk-value">GCP (Cloud Storage, Pub/Sub, BigQuery), AWS, Terraform, Docker, Kubernetes</div>
+
+            <div class="sk-label">CI/CD &amp; Tooling:</div>
+            <div class="sk-value">Git, GitHub, Jenkins, TeamCity, CircleCI, JIRA, Okta</div>
+        </div>
+    </div>
+
+    <!-- LANGUAGE SKILLS -->
+    <div class="section">
+        <div class="section-title">Language Skills</div>
+        <div class="lang-inline">
+            <div class="lang-group"><span class="lang-name">English</span><span class="lang-separator">–</span><span class="lang-level">C1 (Business-Fluent)</span></div>
+            <span class="lang-sep">|</span>
+            <div class="lang-group"><span class="lang-name">German</span><span class="lang-separator">–</span><span class="lang-level">A2 (Actively learning)</span></div>
+            <span class="lang-sep">|</span>
+            <div class="lang-group"><span class="lang-name">Tamil</span><span class="lang-separator">–</span><span class="lang-level">Native</span></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
