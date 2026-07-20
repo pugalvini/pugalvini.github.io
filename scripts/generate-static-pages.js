@@ -5,6 +5,20 @@ const SITE_URL = 'https://pugalvini.github.io';
 
 const blogs = [
   {
+    title: 'Building Anish Aqua Minerals Website with Antigravity',
+    description: 'How I leveraged Antigravity AI to rapidly design, build, and deploy a responsive React web app for a new packaged drinking water business in Coimbatore.',
+    url: '/blog/anish-aqua-minerals-antigravity',
+    date: 'February 28, 2026',
+    image: 'og-anish-aqua.jpg'
+  },
+  {
+    title: 'Scaling from Zero to Millions of Users',
+    description: 'A visual journey of how modern systems evolve to handle massive scale. Learn about single servers, load balancing, caching, and sharding.',
+    url: '/blog/scaling-zero-to-millions',
+    date: 'January 11, 2026',
+    image: 'og-scaling.jpg'
+  },
+  {
     title: 'Migrating AWS MSK to IAM Authentication for EKS Pods',
     description: 'Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.',
     url: '/blog/aws-msk-iam-auth',
