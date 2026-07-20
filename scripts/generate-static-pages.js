@@ -8,37 +8,43 @@ const blogs = [
     title: 'Migrating AWS MSK to IAM Authentication for EKS Pods',
     description: 'Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.',
     url: '/blog/aws-msk-iam-auth',
-    date: 'July 14, 2026'
+    date: 'July 14, 2026',
+    image: 'og-aws-msk.jpg'
   },
   {
     title: 'Supercharging TDD and Refactoring with Cursor',
     description: 'How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.',
     url: '/blog/cursor-tdd-refactoring',
-    date: 'December 14, 2025'
+    date: 'December 14, 2025',
+    image: 'og-cursor-tdd.jpg'
   },
   {
     title: 'Securing the Software Supply Chain with Sigstore',
     description: 'Say goodbye to PGP key management and hello to keyless, transparent code signing. Learn how Sigstore uses OIDC, Fulcio, and Rekor to secure your artifacts.',
     url: '/blog/sigstore-software-supply-chain',
-    date: 'November 23, 2025'
+    date: 'November 23, 2025',
+    image: 'og-sigstore.jpg'
   },
   {
     title: 'Mastering Rate Limiting: 5 Algorithms You Need to Know',
     description: 'A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.',
     url: '/blog/rate-limiting-algorithms',
-    date: 'September 6, 2025'
+    date: 'September 6, 2025',
+    image: 'og-rate-limit.jpg'
   },
   {
     title: 'Mentoring Interns in Tech: What I Wish I Knew Before',
     description: 'Lessons learned from guiding a second-year college intern through a fast-paced product cycle. From structuring learning to communicating like a teacher, here\'s what I learned about mentorship.',
     url: '/blog/mentoring-interns-in-tech',
-    date: 'July 17, 2025'
+    date: 'July 17, 2025',
+    image: 'og-mentoring.jpg'
   },
   {
     title: 'How to Create a Mute Rule in GCP Security Command Center',
     description: 'A practical guide to reducing alert fatigue in cloud security. Learn how to create mute rules in GCP SCC to filter out non-actionable findings and help your team focus on what truly matters.',
     url: '/blog/create-mute-rule-gcp-scc',
-    date: 'May 13, 2025'
+    date: 'May 13, 2025',
+    image: 'og-gcp-scc.jpg'
   }
 ];
 
@@ -77,14 +83,14 @@ function generateStaticPages() {
     <meta property="og:description" content="${blog.description}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="${SITE_URL}${blog.url}" />
-    <meta property="og:image" content="${SITE_URL}/og-image.jpg" />
+    <meta property="og:image" content="${SITE_URL}/${blog.image || 'og-image.jpg'}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="${blog.title}" />
     <meta property="twitter:description" content="${blog.description}" />
-    <meta property="twitter:image" content="${SITE_URL}/og-image.jpg" />
+    <meta property="twitter:image" content="${SITE_URL}/${blog.image || 'og-image.jpg'}" />
     `;
 
     // Insert OG tags right after <meta charset> so they appear BEFORE any <script> tags.
