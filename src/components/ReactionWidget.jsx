@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../firebase';
+import { ref, onValue, runTransaction } from 'firebase/database';
 
 const ReactionWidget = ({ slug }) => {
   const [reaction, setReaction] = useState(null);
+  const [likesCount, setLikesCount] = useState(0);
 
   useEffect(() => {
     // Load existing reaction from localStorage if any
@@ -9,13 +12,31 @@ const ReactionWidget = ({ slug }) => {
     if (saved) {
       setReaction(saved);
     }
+
+    // Connect to Firebase Realtime Database
+    const likesRef = ref(db, `likes/${slug}`);
+    
+    // Listen for real-time updates to the like count
+    const unsubscribe = onValue(likesRef, (snapshot) => {
+      const data = snapshot.val();
+      setLikesCount(data || 0);
+    });
+
+    return () => unsubscribe();
   }, [slug]);
 
   const handleReact = (type) => {
     setReaction(type);
     localStorage.setItem(`reaction_${slug}`, type);
-    // In a real app with a backend, you'd send an API call here.
-    // For a static site, this provides instant feedback to the user.
+
+    // Only increment the global counter if they voted 'up' (Yes)
+    // You could also track 'down' votes in a separate counter if desired
+    if (type === 'up') {
+      const likesRef = ref(db, `likes/${slug}`);
+      runTransaction(likesRef, (currentLikes) => {
+        return (currentLikes || 0) + 1;
+      });
+    }
   };
 
   return (
@@ -23,7 +44,7 @@ const ReactionWidget = ({ slug }) => {
       <h3 className="text-lg font-serif font-semibold text-slate-900 mb-4">
         {reaction ? 'Thanks for your feedback! 🙌' : 'Was this article helpful?'}
       </h3>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mb-3">
         <button
           onClick={() => handleReact('up')}
           className={`flex items-center gap-2 px-6 py-2 rounded-full font-medium transition-all ${
@@ -50,6 +71,9 @@ const ReactionWidget = ({ slug }) => {
         >
           <span>👎</span> No
         </button>
+      </div>
+      <div className="text-sm text-slate-500 font-medium">
+        {likesCount === 1 ? '1 person found this helpful' : `${likesCount} people found this helpful`}
       </div>
     </div>
   );
