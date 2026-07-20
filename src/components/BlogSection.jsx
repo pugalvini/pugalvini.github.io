@@ -68,6 +68,8 @@ const BlogSection = () => {
         }
     ];
 
+    const sortedBlogPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
     return (
         <section id="blog" className="section-container bg-secondary-bg">
             <div className="text-center mb-12">
@@ -80,7 +82,7 @@ const BlogSection = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                {blogPosts.slice(0, 3).map((post, index) => (
+                {sortedBlogPosts.slice(0, 3).map((post, index) => (
                     <Link
                         key={index}
                         to={post.route}
