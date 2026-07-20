@@ -7,6 +7,7 @@ import ExperienceTimeline from './components/ExperienceTimeline';
 import MentorshipSection from './components/MentorshipSection';
 import BlogSection from './components/BlogSection';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import BlogPostMentoring from './pages/BlogPostMentoring';
 import BlogPostGCP from './pages/BlogPostGCP';
 import BlogPage from './pages/BlogPage';
@@ -37,6 +38,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
+        <ScrollToTop />
         <Footer />
       </div>
     </Router>
