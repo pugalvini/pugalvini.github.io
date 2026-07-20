@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pugalvini.github.io/sitemap.xml

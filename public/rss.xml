@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Pugalvini's Portfolio Blog</title>
+  <link>https://pugalvini.github.io</link>
+  <description>Insights on software engineering, leadership, and cloud technologies</description>
+  <language>en-us</language>
+  <item>
+    <title>Migrating AWS MSK to IAM Authentication for EKS Pods</title>
+    <link>https://pugalvini.github.io/blog/aws-msk-iam-auth</link>
+    <description><![CDATA[Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.]]></description>
+    <pubDate>Mon, 13 Jul 2026 18:30:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Supercharging TDD and Refactoring with Cursor</title>
+    <link>https://pugalvini.github.io/blog/cursor-tdd-refactoring</link>
+    <description><![CDATA[How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.]]></description>
+    <pubDate>Sat, 13 Dec 2025 18:30:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Securing the Software Supply Chain with Sigstore</title>
+    <link>https://pugalvini.github.io/blog/sigstore-software-supply-chain</link>
+    <description><![CDATA[Say goodbye to PGP key management and hello to keyless, transparent code signing. Learn how Sigstore uses OIDC, Fulcio, and Rekor to secure your artifacts.]]></description>
+    <pubDate>Sat, 22 Nov 2025 18:30:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mastering Rate Limiting: 5 Algorithms You Need to Know</title>
+    <link>https://pugalvini.github.io/blog/rate-limiting-algorithms</link>
+    <description><![CDATA[A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.]]></description>
+    <pubDate>Fri, 05 Sep 2025 18:30:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Mentoring Interns in Tech: What I Wish I Knew Before</title>
+    <link>https://pugalvini.github.io/blog/mentoring-interns-in-tech</link>
+    <description><![CDATA[Lessons learned from guiding a second-year college intern through a fast-paced product cycle. From structuring learning to communicating like a teacher, here's what I learned about mentorship.]]></description>
+    <pubDate>Wed, 16 Jul 2025 18:30:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>How to Create a Mute Rule in GCP Security Command Center</title>
+    <link>https://pugalvini.github.io/blog/create-mute-rule-gcp-scc</link>
+    <description><![CDATA[A practical guide to reducing alert fatigue in cloud security. Learn how to create mute rules in GCP SCC to filter out non-actionable findings and help your team focus on what truly matters.]]></description>
+    <pubDate>Mon, 12 May 2025 18:30:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
