@@ -58,10 +58,13 @@ const Footer = () => {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-slate-300 hover:text-white transition-colors"
+                                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors group"
                                 aria-label={link.name}
                             >
-                                {link.icon}
+                                <span className="group-hover:-translate-y-1 transition-transform">
+                                    {link.icon}
+                                </span>
+                                <span className="text-sm font-medium">{link.name}</span>
                             </a>
                         ))}
                     </div>
