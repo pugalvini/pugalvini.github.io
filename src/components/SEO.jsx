@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, url, image }) => {
   const siteName = "Pugalvini's Portfolio";
-  const defaultImage = "https://pugalvini.github.io/og-image.png"; // Placeholder default
+  const defaultImage = "https://pugalvini.github.io/og-image.jpg"; // Placeholder default
   const defaultUrl = "https://pugalvini.github.io";
 
   return (
