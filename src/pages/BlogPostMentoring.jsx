@@ -31,7 +31,7 @@ const BlogPostMentoring = () => {
                 {/* Content */}
                 <div className="prose prose-lg max-w-none">
                     <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                        When I was asked to mentor a second-year college intern during a fast-paced product cycle, my first instinct was excitement—and nervousness. I had over 7 years of experience building full-stack solutions, leading feature teams, and navigating Agile ceremonies. But guiding a fresh intern? That was uncharted territory.
+                        When I was asked to mentor a second-year college intern during a fast-paced product cycle, my first instinct was excitement—and nervousness. I had over {new Date().getFullYear() - 2018} years of experience building full-stack solutions, leading feature teams, and navigating Agile ceremonies. But guiding a fresh intern? That was uncharted territory.
                     </p>
                     <p className="text-lg text-slate-700 leading-relaxed mb-6">
                         Looking back, I learned just as much as I taught. Here's what I wish I had known before taking up the mentor role, so you can be better prepared if you find yourself in similar shoes.

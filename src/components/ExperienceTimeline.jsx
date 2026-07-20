@@ -53,7 +53,7 @@ const ExperienceTimeline = () => {
                     Professional Journey
                 </h2>
                 <p className="text-base md:text-lg text-slate-600 px-4">
-                    7+ years of delivering impactful solutions across diverse domains
+                    {new Date().getFullYear() - 2018}+ years of delivering impactful solutions across diverse domains
                 </p>
             </div>
 

@@ -28,7 +28,7 @@ const Hero = () => {
 
                     {/* Subtitle */}
                     <p className="text-2xl md:text-3xl text-slate-600 mb-8 font-light">
-                        Software Engineer III | 7+ Years Experience
+                        Software Engineer III | {new Date().getFullYear() - 2018}+ Years Experience
                     </p>
 
                     {/* Brief Introduction */}

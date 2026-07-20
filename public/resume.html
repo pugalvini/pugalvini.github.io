@@ -226,8 +226,11 @@
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <div class="summary">
-                Full-stack developer with 7+ years of experience in designing, developing, and implementing robust and scalable web applications. Expertise in microservices-based architectures, integrating with third-party APIs (including Workday), and automating infrastructure provisioning using Terraform. Proven track record of improving operational efficiency, reducing manual effort through automation, and enhancing application security.
+                Full-stack developer with <span id="exp-years-summary">7</span>+ years of experience in designing, developing, and implementing robust and scalable web applications. Expertise in microservices-based architectures, integrating with third-party APIs (including Workday), and automating infrastructure provisioning using Terraform. Proven track record of improving operational efficiency, reducing manual effort through automation, and enhancing application security.
             </div>
+            <script>
+                document.getElementById('exp-years-summary').textContent = new Date().getFullYear() - 2018;
+            </script>
         </div>
 
         <!-- Technical Skills -->
