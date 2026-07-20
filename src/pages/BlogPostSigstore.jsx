@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
+import ReadProgress from '../components/ReadProgress';
+import ReactionWidget from '../components/ReactionWidget';
+import BlogComments from '../components/BlogComments';
 
 /* ─────────────────────────────────────────────
    Diagram: Sigstore Workflow
@@ -94,6 +98,7 @@ const BlogPostSigstore = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
+            <SEO title="Blog Post" description="Technical article" url={window.location.href} />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
