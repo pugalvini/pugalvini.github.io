@@ -72,11 +72,15 @@ function generateStaticPages() {
     const customMetaTags = `
     <title>${blog.title} | Vinitha Pukazh Bagya R.</title>
     <meta name="description" content="${blog.description}" />
+    <meta property="og:site_name" content="Pugalvini's Portfolio" />
     <meta property="og:title" content="${blog.title}" />
     <meta property="og:description" content="${blog.description}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="${SITE_URL}${blog.url}" />
     <meta property="og:image" content="${SITE_URL}/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="${blog.title}" />
     <meta property="twitter:description" content="${blog.description}" />
