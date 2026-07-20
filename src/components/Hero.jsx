@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const scrollToSection = (sectionId) => {
@@ -42,16 +43,16 @@ const Hero = () => {
                             href="/Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn-ghost"
+                            className="px-6 py-3 bg-accent text-white font-medium rounded-lg transition-all duration-300 hover:bg-accent/90 hover:shadow-lg hover:scale-105"
                         >
                             Download Resume
                         </a>
-                        <button
-                            onClick={() => scrollToSection('blog')}
+                        <Link
+                            to="/blog"
                             className="btn-ghost"
                         >
                             Read My Blog
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
