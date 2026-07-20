@@ -47,7 +47,7 @@ const ExperienceTimeline = () => {
     ];
 
     return (
-        <section className="section-container">
+        <section id="experience" className="section-container">
             <div className="text-center mb-8 md:mb-16">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-slate-900 mb-3 md:mb-4 px-4">
                     Professional Journey

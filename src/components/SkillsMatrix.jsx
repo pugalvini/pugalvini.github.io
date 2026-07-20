@@ -23,7 +23,7 @@ const SkillsMatrix = () => {
     ];
 
     return (
-        <section className="section-container bg-secondary-bg">
+        <section id="skills" className="section-container bg-secondary-bg">
             <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
                     Technical Expertise

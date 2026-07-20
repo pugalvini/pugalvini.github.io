@@ -2,7 +2,7 @@ import React from 'react';
 
 const MentorshipSection = () => {
     return (
-        <section className="section-container">
+        <section id="mentorship" className="section-container">
             <div className="max-w-4xl mx-auto">
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 border border-blue-100">
                     <div className="flex flex-col md:flex-row items-center gap-8">
