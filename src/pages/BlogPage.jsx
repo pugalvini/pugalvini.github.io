@@ -12,6 +12,7 @@ const BlogPage = () => {
             excerpt: 'A conceptual guide to protecting your systems from being overwhelmed. Learn about the Token Bucket, Leaking Bucket, Fixed Window, and Sliding Window algorithms.',
             readTime: '8 min read',
             date: 'July 20, 2026',
+            theme: { color: 'from-blue-100 via-indigo-100 to-purple-100', emoji: '🚦' },
             tags: ['System Design', 'Backend', 'Architecture'],
             route: '/blog/rate-limiting-algorithms'
         },
@@ -20,6 +21,7 @@ const BlogPage = () => {
             excerpt: 'Lessons learned from guiding a second-year college intern through a fast-paced product cycle. From structuring learning to communicating like a teacher, here\'s what I learned about mentorship.',
             readTime: '5 min read',
             date: 'July 17, 2025',
+            theme: { color: 'from-green-100 via-teal-100 to-emerald-100', emoji: '🌱' },
             tags: ['Leadership', 'Mentoring', 'Career Growth'],
             route: '/blog/mentoring-interns-in-tech'
         },
@@ -28,6 +30,7 @@ const BlogPage = () => {
             excerpt: 'A practical guide to reducing alert fatigue in cloud security. Learn how to create mute rules in GCP SCC to filter out non-actionable findings and help your team focus on what truly matters.',
             readTime: '4 min read',
             date: 'May 13, 2025',
+            theme: { color: 'from-orange-100 via-red-100 to-rose-100', emoji: '🛡️' },
             tags: ['Cloud Security', 'GCP', 'DevSecOps'],
             route: '/blog/create-mute-rule-gcp-scc'
         }
@@ -49,24 +52,18 @@ const BlogPage = () => {
                 {/* Blog Posts Grid */}
                 <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                     {blogPosts.map((post, index) => {
-                        const isExternal = post.link !== undefined;
-                        const Component = isExternal ? 'a' : Link;
-                        const props = isExternal 
-                            ? { href: post.link, target: '_blank', rel: 'noopener noreferrer' }
-                            : { to: post.route };
-
                         return (
-                            <Component
+                            <Link
                                 key={index}
-                                {...props}
+                                to={post.route}
                                 className="bg-white rounded-xl overflow-hidden border border-slate-200 card-lift cursor-pointer group block"
                             >
-                                {/* Image Placeholder */}
-                                <div className="h-64 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 relative overflow-hidden">
+                                {/* Dynamic Image Placeholder */}
+                                <div className={`h-64 bg-gradient-to-br ${post.theme.color} relative overflow-hidden`}>
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         <div className="text-center p-8">
-                                            <div className="text-6xl mb-4">📝</div>
-                                            <p className="text-slate-600 font-medium">{post.title}</p>
+                                            <div className="text-6xl mb-4">{post.theme.emoji}</div>
+                                            <p className="text-slate-700/80 font-medium">{post.title}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +96,7 @@ const BlogPage = () => {
                                         ))}
                                     </div>
                                 </div>
-                            </Component>
+                            </Link>
                         );
                     })}
                 </div>
