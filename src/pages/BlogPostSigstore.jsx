@@ -93,6 +93,7 @@ const BlogPostSigstore = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
@@ -200,6 +201,8 @@ const BlogPostSigstore = () => {
                     </p>
 
                 </div>
+                <ReactionWidget slug="sigstore-software-supply-chain" />
+                <BlogComments />
             </article>
         </div>
     );

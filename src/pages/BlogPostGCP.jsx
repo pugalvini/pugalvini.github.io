@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
+import ReadProgress from '../components/ReadProgress';
+import ReactionWidget from '../components/ReactionWidget';
+import BlogComments from '../components/BlogComments';
 
 const BlogPostGCP = () => {
     useEffect(() => {
@@ -8,6 +11,7 @@ const BlogPostGCP = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <SEO 
                 title="How to Create a Mute Rule in GCP Security Command Center"
                 description="A guide to reducing alert fatigue in cloud security."
@@ -175,6 +179,8 @@ const BlogPostGCP = () => {
                     </div>
                 </div>
 
+                <ReactionWidget slug="create-mute-rule-gcp-scc" />
+                <BlogComments />
             </article>
         </div>
     );

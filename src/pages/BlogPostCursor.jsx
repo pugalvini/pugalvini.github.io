@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
+import ReadProgress from '../components/ReadProgress';
+import ReactionWidget from '../components/ReactionWidget';
+import BlogComments from '../components/BlogComments';
 
 /* ─────────────────────────────────────────────
    Diagram: AI-Assisted TDD Workflow
@@ -61,6 +64,7 @@ const BlogPostCursor = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <SEO 
                 title="Supercharging TDD and Refactoring with Cursor"
                 description="How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze."
@@ -202,6 +206,8 @@ class NotificationFormatterFactory {
                     </p>
 
                 </div>
+                <ReactionWidget slug="cursor-tdd-refactoring" />
+                <BlogComments />
             </article>
         </div>
     );

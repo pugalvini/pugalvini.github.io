@@ -7,6 +7,7 @@ const BlogPostMentoring = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
@@ -140,6 +141,8 @@ const BlogPostMentoring = () => {
 
                 {/* Back to Home */}
 
+                <ReactionWidget slug="mentoring-interns-in-tech" />
+                <BlogComments />
             </article>
         </div>
     );

@@ -7,6 +7,7 @@ const BlogPostMSKIAM = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
@@ -193,6 +194,8 @@ properties.put("sasl.client.callback.handler.class", "software.amazon.msk.auth.i
                     </p>
 
                 </div>
+                <ReactionWidget slug="aws-msk-iam-auth" />
+                <BlogComments />
             </article>
         </div>
     );

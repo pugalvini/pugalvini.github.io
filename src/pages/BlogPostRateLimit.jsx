@@ -326,6 +326,7 @@ const BlogPostRateLimit = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <ReadProgress />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
@@ -448,6 +449,8 @@ const BlogPostRateLimit = () => {
                     </p>
                 </div>
 
+                <ReactionWidget slug="rate-limiting-algorithms" />
+                <BlogComments />
             </article>
         </div>
     );
