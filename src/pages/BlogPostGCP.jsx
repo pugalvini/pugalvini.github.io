@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import ReadProgress from '../components/ReadProgress';
 import ReactionWidget from '../components/ReactionWidget';
+import ShareWidget from '../components/ShareWidget';
 import BlogComments from '../components/BlogComments';
 
 const BlogPostGCP = () => {
@@ -179,6 +180,7 @@ const BlogPostGCP = () => {
                     </div>
                 </div>
 
+                <ShareWidget />
                 <ReactionWidget slug="create-mute-rule-gcp-scc" />
                 <BlogComments />
             </article>

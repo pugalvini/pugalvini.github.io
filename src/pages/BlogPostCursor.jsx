@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import ReadProgress from '../components/ReadProgress';
 import ReactionWidget from '../components/ReactionWidget';
+import ShareWidget from '../components/ShareWidget';
 import BlogComments from '../components/BlogComments';
 
 /* ─────────────────────────────────────────────
@@ -206,6 +207,7 @@ class NotificationFormatterFactory {
                     </p>
 
                 </div>
+                <ShareWidget />
                 <ReactionWidget slug="cursor-tdd-refactoring" />
                 <BlogComments />
             </article>

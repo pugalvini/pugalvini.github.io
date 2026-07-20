@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import ReadProgress from '../components/ReadProgress';
 import ReactionWidget from '../components/ReactionWidget';
+import ShareWidget from '../components/ShareWidget';
 import BlogComments from '../components/BlogComments';
 
 const BlogPostMSKIAM = () => {
@@ -199,6 +200,7 @@ properties.put("sasl.client.callback.handler.class", "software.amazon.msk.auth.i
                     </p>
 
                 </div>
+                <ShareWidget />
                 <ReactionWidget slug="aws-msk-iam-auth" />
                 <BlogComments />
             </article>

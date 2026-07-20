@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import ReadProgress from '../components/ReadProgress';
 import ReactionWidget from '../components/ReactionWidget';
+import ShareWidget from '../components/ShareWidget';
 import BlogComments from '../components/BlogComments';
 
 const BlogPostMentoring = () => {
@@ -146,6 +147,7 @@ const BlogPostMentoring = () => {
 
                 {/* Back to Home */}
 
+                <ShareWidget />
                 <ReactionWidget slug="mentoring-interns-in-tech" />
                 <BlogComments />
             </article>
