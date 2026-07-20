@@ -85,10 +85,13 @@ function generateStaticPages() {
 
     newHtml = newHtml.replace('</head>', `${customMetaTags}\n</head>`);
 
-    const dirPath = path.resolve('dist', blog.url.replace(/^\//, '')); // e.g. dist/blog/cursor-tdd-refactoring
-    fs.mkdirSync(dirPath, { recursive: true });
+    const htmlPath = path.resolve('dist', blog.url.replace(/^\//, '') + '.html'); // e.g. dist/blog/cursor-tdd-refactoring.html
+    const dirPath = path.dirname(htmlPath);
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
     
-    fs.writeFileSync(path.join(dirPath, 'index.html'), newHtml);
+    fs.writeFileSync(htmlPath, newHtml);
     console.log(`✅ Generated static HTML for ${blog.url}`);
   });
 }
