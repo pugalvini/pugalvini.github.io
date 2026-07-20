@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 /* ─────────────────────────────────────────────
    Diagram: Sigstore Workflow
@@ -97,9 +96,6 @@ const BlogPostSigstore = () => {
             <div className="max-w-3xl mx-auto px-6">
                 {/* ── Breadcrumb & Meta ── */}
                 <div className="mb-8">
-                    <Link to="/blog" className="text-accent hover:underline text-sm font-medium inline-flex items-center gap-1 mb-6">
-                        ← Back to Blog
-                    </Link>
                     <div className="flex items-center gap-3 text-sm text-slate-500 mb-4">
                         <span className="px-3 py-1 bg-amber-100 text-amber-700 font-semibold rounded-full">
                             Security

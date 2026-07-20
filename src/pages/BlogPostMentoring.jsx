@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const BlogPostMentoring = () => {
     useEffect(() => {
@@ -9,11 +8,6 @@ const BlogPostMentoring = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <article className="section-container max-w-4xl mx-auto">
-                {/* Back Button */}
-                <Link to="/blog" className="inline-flex items-center gap-2 text-accent hover:underline mb-8">
-                    ← Back to Blog
-                </Link>
-
                 {/* Header */}
                 <header className="mb-12">
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -146,12 +140,6 @@ const BlogPostMentoring = () => {
 
                 {/* Back to Home */}
 
-                {/* Back to Blog */}
-                <div className="mt-16 pt-8 border-t border-slate-200">
-                    <Link to="/blog" className="inline-flex items-center gap-2 text-accent hover:underline text-lg font-medium">
-                        ← Back to Blog
-                    </Link>
-                </div>
             </article>
         </div>
     );
