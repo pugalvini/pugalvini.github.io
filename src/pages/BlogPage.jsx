@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const BlogPage = () => {
     useEffect(() => {
@@ -65,6 +66,11 @@ const BlogPage = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <SEO 
+                title="Blog" 
+                description="Insights on software engineering, leadership, and cloud technologies by Pugalvini."
+                url="https://pugalvini.github.io/blog"
+            />
             {/* Header */}
             <div className="section-container">
                 <div className="text-center mb-16">

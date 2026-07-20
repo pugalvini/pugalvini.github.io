@@ -16,12 +16,17 @@ import BlogPostSigstore from './pages/BlogPostSigstore';
 import BlogPostCursor from './pages/BlogPostCursor';
 import BlogPostMSKIAM from './pages/BlogPostMSKIAM';
 import NotFoundPage from './pages/NotFoundPage';
+import SEO from './components/SEO';
 import './index.css';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
+        <SEO 
+          title="Home" 
+          description="Pugalvini's Portfolio - Software Engineer, Mentor, and Cloud Enthusiast" 
+        />
         <Header />
 
         <Routes>

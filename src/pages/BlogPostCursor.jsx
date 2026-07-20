@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 
 /* ─────────────────────────────────────────────
    Diagram: AI-Assisted TDD Workflow
@@ -60,6 +61,11 @@ const BlogPostCursor = () => {
 
     return (
         <div className="min-h-screen bg-white pt-20">
+            <SEO 
+                title="Supercharging TDD and Refactoring with Cursor"
+                description="How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze."
+                url="https://pugalvini.github.io/blog/cursor-tdd-refactoring"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
