@@ -11,6 +11,7 @@ import BlogPostMentoring from './pages/BlogPostMentoring';
 import BlogPostGCP from './pages/BlogPostGCP';
 import BlogPage from './pages/BlogPage';
 import BlogPostRateLimit from './pages/BlogPostRateLimit';
+import NotFoundPage from './pages/NotFoundPage';
 import './index.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/blog/mentoring-interns-in-tech" element={<BlogPostMentoring />} />
           <Route path="/blog/create-mute-rule-gcp-scc" element={<BlogPostGCP />} />
           <Route path="/blog/rate-limiting-algorithms" element={<BlogPostRateLimit />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         <Footer />
