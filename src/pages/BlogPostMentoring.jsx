@@ -13,7 +13,12 @@ const BlogPostMentoring = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
-            <SEO title="Blog Post" description="Technical article" url={window.location.href} />
+            <SEO
+                title="The Art of Mentoring Engineers"
+                description="Lessons learned from mentoring junior engineers — from structured 1:1s and code reviews to building psychological safety and accelerating career growth."
+                url="https://pugalvini.github.io/blog/mentoring-engineers"
+                image="https://pugalvini.github.io/og-mentoring.jpg"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">

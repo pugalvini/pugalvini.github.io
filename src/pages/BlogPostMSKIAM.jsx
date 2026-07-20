@@ -13,7 +13,12 @@ const BlogPostMSKIAM = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
-            <SEO title="Blog Post" description="Technical article" url={window.location.href} />
+            <SEO
+                title="Secure AWS MSK Access with IAM Authentication"
+                description="A step-by-step guide to setting up IAM-based authentication for Amazon MSK, eliminating the need for SASL credentials and improving your Kafka security posture."
+                url="https://pugalvini.github.io/blog/aws-msk-iam-authentication"
+                image="https://pugalvini.github.io/og-aws-msk.jpg"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">

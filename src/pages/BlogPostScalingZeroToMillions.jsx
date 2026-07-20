@@ -162,7 +162,12 @@ const BlogPostScalingZeroToMillions = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
-            <SEO title="Scaling from Zero to Millions of Users" description="A visual journey of system architecture evolution." url={window.location.href} />
+            <SEO
+                title="Scaling from Zero to Millions of Users"
+                description="A visual journey of system architecture evolution — from a single server to a globally distributed, fault-tolerant system."
+                url="https://pugalvini.github.io/blog/scaling-zero-to-millions"
+                image="https://pugalvini.github.io/og-scaling.jpg"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">

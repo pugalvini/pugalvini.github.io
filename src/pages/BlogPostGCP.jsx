@@ -17,6 +17,7 @@ const BlogPostGCP = () => {
                 title="How to Create a Mute Rule in GCP Security Command Center"
                 description="A guide to reducing alert fatigue in cloud security."
                 url="https://pugalvini.github.io/blog/create-mute-rule-gcp-scc"
+                image="https://pugalvini.github.io/og-gcp-scc.jpg"
             />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}

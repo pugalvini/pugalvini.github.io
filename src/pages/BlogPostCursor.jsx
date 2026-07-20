@@ -70,6 +70,7 @@ const BlogPostCursor = () => {
                 title="Supercharging TDD and Refactoring with Cursor"
                 description="How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze."
                 url="https://pugalvini.github.io/blog/cursor-tdd-refactoring"
+                image="https://pugalvini.github.io/og-cursor-tdd.jpg"
             />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}

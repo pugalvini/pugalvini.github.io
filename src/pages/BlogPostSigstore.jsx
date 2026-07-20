@@ -99,7 +99,12 @@ const BlogPostSigstore = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
-            <SEO title="Blog Post" description="Technical article" url={window.location.href} />
+            <SEO
+                title="Securing the Software Supply Chain with Sigstore"
+                description="Say goodbye to PGP key management and hello to keyless, transparent code signing. Learn how Sigstore revolutionizes artifact signing."
+                url="https://pugalvini.github.io/blog/sigstore-software-supply-chain"
+                image="https://pugalvini.github.io/og-sigstore.jpg"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">

@@ -332,7 +332,12 @@ const BlogPostRateLimit = () => {
     return (
         <div className="min-h-screen bg-white pt-20">
             <ReadProgress />
-            <SEO title="Blog Post" description="Technical article" url={window.location.href} />
+            <SEO
+                title="Rate Limiting Strategies at Scale"
+                description="A deep dive into token bucket, sliding window, and fixed window rate limiting algorithms — with real-world tradeoffs and implementation patterns."
+                url="https://pugalvini.github.io/blog/rate-limiting-strategies"
+                image="https://pugalvini.github.io/og-rate-limit.jpg"
+            />
             <article className="section-container max-w-4xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
