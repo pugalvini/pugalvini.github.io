@@ -13,13 +13,6 @@ const Hero = () => {
         <section id="home" className="section-container min-h-screen flex items-center pt-20">
             <div className="w-full">
                 <div className="max-w-4xl">
-                    {/* Relocation Status */}
-                    <div className="flex items-center gap-2 mb-6">
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-slate-600 font-medium">
-                            Open to relocation
-                        </span>
-                    </div>
 
                     {/* Main Heading */}
                     <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 mb-4 leading-tight">
