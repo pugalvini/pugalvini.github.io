@@ -87,7 +87,12 @@ function generateStaticPages() {
     <meta property="twitter:image" content="${SITE_URL}/og-image.jpg" />
     `;
 
-    newHtml = newHtml.replace('</head>', `${customMetaTags}\n</head>`);
+    // Insert OG tags right after <meta charset> so they appear BEFORE any <script> tags.
+    // WhatsApp's crawler stops parsing when it hits a <script> tag.
+    newHtml = newHtml.replace(
+      '<meta charset="UTF-8" />',
+      `<meta charset="UTF-8" />${customMetaTags}`
+    );
 
     const htmlPath = path.resolve('dist', blog.url.replace(/^\//, '') + '.html'); // e.g. dist/blog/cursor-tdd-refactoring.html
     const dirPath = path.dirname(htmlPath);
