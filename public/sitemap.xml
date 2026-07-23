@@ -16,6 +16,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://pugalvini.github.io/blog/system-design-interview-guide</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pugalvini.github.io/blog/cursor-tdd-refactoring</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>

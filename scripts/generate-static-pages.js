@@ -19,6 +19,13 @@ const blogs = [
     image: 'og-scaling.jpg'
   },
   {
+    title: 'The System Design Interview Playbook: A Senior Engineer\'s Complete Guide',
+    description: 'Stop memorizing solutions. Learn the structured framework that senior engineers use to tackle any system design interview question — with real examples, diagrams, and a checklist.',
+    url: '/blog/system-design-interview-guide',
+    date: 'February 9, 2026',
+    image: 'og-system-design.jpg'
+  },
+  {
     title: 'Migrating AWS MSK to IAM Authentication for EKS Pods',
     description: 'Simplifying security, eliminating certificate rotation, and enabling smoother Disaster Recovery.',
     url: '/blog/aws-msk-iam-auth',

@@ -12,6 +12,12 @@
     <pubDate>Mon, 13 Jul 2026 18:30:00 GMT</pubDate>
   </item>
   <item>
+    <title>The System Design Interview Playbook: A Senior Engineer's Complete Guide</title>
+    <link>https://pugalvini.github.io/blog/system-design-interview-guide</link>
+    <description><![CDATA[Stop memorizing solutions. Learn the structured framework that senior engineers use to tackle any system design interview question — with real examples, diagrams, and a checklist.]]></description>
+    <pubDate>Sun, 08 Feb 2026 18:30:00 GMT</pubDate>
+  </item>
+  <item>
     <title>Supercharging TDD and Refactoring with Cursor</title>
     <link>https://pugalvini.github.io/blog/cursor-tdd-refactoring</link>
     <description><![CDATA[How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.]]></description>

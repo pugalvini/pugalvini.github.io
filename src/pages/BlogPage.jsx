@@ -19,6 +19,16 @@ const BlogPage = () => {
             image: '/og-anish-aqua.jpg'
         },
         {
+            title: 'The System Design Interview Playbook: A Senior Engineer\'s Complete Guide',
+            excerpt: 'Stop memorizing solutions. Learn the structured framework that senior engineers use to tackle any system design interview question — with real examples, diagrams, and a checklist.',
+            readTime: '14 min read',
+            date: 'February 9, 2026',
+            theme: { color: 'from-blue-100 via-indigo-100 to-violet-100', emoji: '🗺️' },
+            tags: ['System Design', 'Interview Prep', 'Architecture'],
+            route: '/blog/system-design-interview-guide',
+            image: '/og-system-design.jpg'
+        },
+        {
             title: 'Scaling from Zero to Millions of Users',
             excerpt: 'A visual journey of how modern systems evolve to handle massive scale. Learn about single servers, load balancing, caching, and sharding.',
             readTime: '7 min read',

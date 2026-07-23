@@ -11,6 +11,12 @@ const blogs = [
     date: 'July 14, 2026'
   },
   {
+    title: 'The System Design Interview Playbook: A Senior Engineer\'s Complete Guide',
+    description: 'Stop memorizing solutions. Learn the structured framework that senior engineers use to tackle any system design interview question — with real examples, diagrams, and a checklist.',
+    url: '/blog/system-design-interview-guide',
+    date: 'February 9, 2026'
+  },
+  {
     title: 'Supercharging TDD and Refactoring with Cursor',
     description: 'How AI fundamentally changes the Red-Green-Refactor loop and makes maintaining code a breeze.',
     url: '/blog/cursor-tdd-refactoring',
